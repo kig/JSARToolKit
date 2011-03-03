@@ -1,0 +1,217 @@
+<html><head>
+<script src="../../src/NyAs3Utils.js"></script>
+<script src="../../src/FLARArrayUtil.js"></script>
+<script src="../../src/FLARException.js"></script>
+<script src="../../src/FLARMat.js"></script>
+<script src="../../src/FLARRgbPixelReader.js"></script>
+<script src="../../src/NyARHistogramAnalyzer.js"></script>
+<script src="../../src/NyARPca2d.js"></script>
+<script src="../../src/NyARRasterReader.js"></script>
+<script src="../../src/NyARTypes.js"></script>
+<script src="../../src/FLARRasterFilter.js"></script>
+<script src="../../src/FLARTypes.js"></script>
+<script src="../../src/NyARLabel.js"></script>
+<script src="../../src/FLARLabeling.js"></script>
+<script src="../../src/NyARParam.js"></script>
+<script src="../../src/FLARParam.js"></script>
+<script src="../../src/NyARRaster.js"></script>
+<script src="../../src/FLARRaster.js"></script>
+<script src="../../src/NyARCode.js"></script>
+<script src="../../src/FLARCode.js"></script>
+<script src="../../src/NyARMatch.js"></script>
+<script src="../../src/NyARRasterAnalyzer.js"></script>
+<script src="../../src/FLARRasterAnalyzer.js"></script>
+<script src="../../src/NyARRasterFilter.js"></script>
+<script src="../../src/NyARSquareDetect.js"></script>
+<script src="../../src/FLARSquareDetect.js"></script>
+<script src="../../src/NyARTransMat.js"></script>
+<script src="../../src/FLARTransMat.js"></script>
+<script src="../../src/NyARUtils.js"></script>
+<script src="../../src/NyARIdMarker.js"></script>
+<script src="../../src/NyARPickup.js"></script>
+<script src="../../src/FLARProcessor.js"></script>
+<script src="../../src/NyARDetector.js"></script>
+<script src="../../src/FLARDetector.js"></script>
+<script src="../../src/FLARIdMarkerDetector.js"></script>
+<script src="../../src/NyARSingleMarkerProcesser.js"></script>
+<script src="../../src/NyUtils.js"></script>
+<script>
+  var i_width = 10, i_height = 10, i_point_per_pix = 4, i_edge_percentage = 10
+  var i_resolution = 10, i_size = {w:100,h:100}, i_distfactor_ref = 10
+  var i_code = [new NyARCode(10,10)], i_marker_width = 10, i_number_of_code = 1, i_num_of_code = 1, i_input_raster_type = NyARBufferType.INT1D_X8R8G8B8_32
+  var i_length = 10, i_persentage = 5, i_max_label = 5
+  var i_distfactor = new NyARCameraDistortionFactor(), i_screen_size = {w:100,h:100}, i_distfactor_ref = new NyARCameraDistortionFactor()
+  var i_lt = 5, i_source_size = {w:100,h:100}
+  var i_inst_patt = new NyARParam(), i_ref_code = new NyARCode(10,10), i_param = new NyARParam(), i_encoder = NyIdMarkerDataEncoder_RawBit
+
+  new FLARDetectSquareCB_2(i_param,i_encoder)
+
+  new FLARCode(i_width, i_height,50,  50)
+  new FLARDoublePoint2d()
+  new FLARDoublePoint3d()
+  new FLARException('')
+  new FLARIdMarkerData()
+  new FLARIntSize(0,0)
+//   new FLARLabeling(i_width,i_height)
+  new FLARMat(10,10)
+  new FLARMultiIdMarkerDetector(i_param ,i_marker_width)
+  new FLARMultiMarkerDetector(i_param, [new FLARCode(100,100)], i_marker_width, i_number_of_code)
+  new FLARParam()
+  new FLARRasterAnalyzer_Histogram(i_vertical_interval)
+  new FLARRasterFilter_Threshold(i_threshold)
+  new FLARRasterThresholdAnalyzer_SlidePTile(i_persentage, i_vertical_interval)
+  var bitmapData = new BitmapData(100,100)
+  new FLARRgbPixelReader_BitmapData(bitmapData)
+  new FLARRgbRaster_BitmapData(bitmapData)
+  new FLARSingleIdMarkerDetector(i_param ,i_marker_width)
+  new FLARSingleMarkerDetector(new FLARParam(),new FLARCode(100,100),i_marker_width)
+  new FLARSquare()
+  new FLARSquareContourDetector(i_size)
+  new FLARTransMatResult()
+  new FLContourPickup()
+  new FLSingleARMarkerProcesser()
+  new FLSingleNyIdMarkerProcesser()
+
+
+  new NyARBinRaster(10,10)
+  new NyARCode(i_width, i_height)
+  new NyARColorPatt_Perspective(i_width,i_height,i_point_per_pix,i_edge_percentage)
+  new NyARColorPatt_Perspective_O2(i_width,i_height,i_resolution,i_edge_percentage)
+  new NyARCoord2Linear(i_size,i_distfactor_ref)
+  new NyARCoord2SquareVertexIndexes()
+  new NyARCustomSingleDetectMarker()
+  new NyARDetectMarker(i_param, i_code, i_marker_width, i_number_of_code, i_input_raster_type)
+  new NyARDetectMarkerResultStack(i_length)
+  new NyARDetectSquareCB(i_inst_patt, i_ref_code, i_num_of_code, i_param)
+  new NyARGrayscaleRaster(100,100)
+  new NyARHistogramAnalyzer_SlidePTile(i_persentage)
+  new NyARLabelInfo()
+  new NyARLabelInfoStack(i_length)
+  new NyARLabelOverlapChecker(i_max_label)
+  new NyARLabeling_Rle(i_width,i_height)
+  new NyARMatchPattDeviationBlackWhiteData(i_width,i_height)
+  new NyARMatchPattDeviationColorData(i_width,i_height)
+  new NyARMatchPatt_Color_WITHOUT_PCA(10,10)
+  new NyARObserv2IdealMap(i_distfactor,i_screen_size)
+  new NyARPickFromRaster_1(i_lt,i_source_size)
+  new NyARPickFromRaster_2x(i_lt,i_source_size)
+  new NyARPickFromRaster_4x(i_lt,i_source_size)
+  new NyARPickFromRaster_N(i_lt,i_resolution,i_source_size)
+  new NyARRaster(20,20,NyARBufferType.INT1D_X8R8G8B8_32)
+
+  var i_raster_format =NyARBufferType.INT1D_X8R8G8B8_32, i_vertical_interval = 10, i_input_raster_type, i_threshold = 10
+  var i_buffer_type, i_buf = [1,2,3], i_size = {w:100,h:100}, i_profile_id = NyARSingleDetectMarker.PF_NYARTOOLKIT
+  var i_ref_cparam
+
+  new NyARRasterAnalyzer_Histogram(i_raster_format, i_vertical_interval)
+  new NyARRasterFilter_ARToolkitThreshold(i_threshold, i_input_raster_type)
+  new NyARRasterThresholdAnalyzer_SlidePTile(i_persentage, i_raster_format, i_vertical_interval)
+  new NyARRaster_BasicClass( i_width, i_height, i_buffer_type)
+  new NyARRgbPixelReader_INT1D_X8R8G8B8_32(i_buf, i_size)
+  new NyARRgbRaster(20,20,NyARBufferType.INT1D_X8R8G8B8_32)
+  new NyARRgbRaster_BasicClass(20,20,NyARBufferType.INT1D_X8R8G8B8_32)
+  new NyARRleLabelFragmentInfoStack(i_length)
+  new NyARSingleDetectMarker(i_param,i_ref_code,i_marker_width,i_input_raster_type,i_profile_id)
+  new NyARSquareContourDetector_Rle(i_size)
+  new NyARSquareStack(i_length)
+  new NyIdMarkerPickup()
+  new PerspectivePixelReader()
+  new RleInfoStack(i_length)
+  new RleLabelOverlapChecker(i_max_label)
+  new SingleARMarkerProcesser()
+  new SingleNyIdMarkerProcesser()
+  new TransformedBitmapPickup(i_ref_cparam,i_width,i_height,i_resolution)
+
+
+  window.onload = function() {
+    DEBUG = false;
+
+    var imgs = [];
+    for (var i=0; i<4; i++) {
+      imgs[i] = new Image();
+      imgs[i].src = "../markers/" + toInt(Math.random()*100).toString();
+    }
+
+    var img = new Image();
+    img.onload = function() {
+      var canvas = document.createElement('canvas');
+      canvas.width = 320;
+      canvas.height = 240;
+      var raster = new NyARRgbRaster_Canvas2D(canvas);
+      document.body.appendChild(canvas);
+
+      canvas.id = 'debugCanvas';
+
+      var param = new FLARParam(320,240);
+
+      var resultMat = new NyARTransMatResult();
+
+      var detector = new FLARMultiIdMarkerDetector(param, 80);
+      detector.setContinueMode(true);
+      var frame = 0;
+      var ctx = canvas.getContext('2d');
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0,0,320,240);
+      ctx.font = "44px Sans-serif";
+      var times = [];
+      setInterval(function() {
+        if (window.paused) return;
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0,0,320,240);
+        var dt = new Date().getTime();
+        for (var i=0; i<4; i++) {
+          ctx.save();
+            ctx.translate(160+Math.sin(i/4*Math.PI*2+dt/1000)*80,90+Math.cos(i/4*Math.PI*2+dt/1000)*80);
+            ctx.scale(0.145+0.035*Math.sin(Math.PI*i/4+dt/1000), 0.145+0.035*Math.sin(Math.PI*i/4+dt/1000));
+            ctx.translate(img.width/2,img.height/2);
+            ctx.rotate(i/2*Math.PI+(dt/500)%(Math.PI*2));
+            ctx.translate(-img.width/2,-img.height/2);
+            ctx.drawImage(imgs[i],0,0);
+          ctx.restore();
+        }
+
+        canvas.changed = true;
+
+        var t = new Date();
+        var detected = detector.detectMarkerLite(raster, 0);
+        for (var idx = 0; idx<detected; idx++) {
+          var id = detector.getIdMarkerData(idx);
+          //read data from i_code via Marsial--Marshal経由で読み出す
+          var currId;
+          if (id.packetLength > 4) {
+            currId = -1;
+          }else{
+            currId=0;
+            //最大4バイト繋げて１個のint値に変換
+            for (var i = 0; i < id.packetLength; i++ ) {
+              currId = (currId << 8) | id.getPacketData(i);
+              //console.log("id[", i, "]=", id.getPacketData(i));
+            }
+          }
+          //console.log("[add] : ID = " + currId);
+          detector.getTransformMatrix(idx, resultMat);
+          //console.log(resultMat);
+          if (idx == 0) times.push(new Date()-t);
+          ctx.save();
+            ctx.translate(160, 120);
+            var sc = 890/resultMat.m23;
+            ctx.scale(sc, sc);
+            ctx.transform(resultMat.m00, resultMat.m01, -resultMat.m10, -resultMat.m11, resultMat.m03, resultMat.m13);
+            ctx.fillStyle = "red";
+            ctx.fillRect(-26,-26,53,53);
+            ctx.fillStyle = "white";
+            ctx.fillText(currId.toString(),-24,24);
+          ctx.restore();
+        }
+        if (detected == 0) times.push(new Date()-t);
+        if (times.length > 100) {
+          if (window.console)
+            console.log(times.reduce(function(s,i){return s+i;})/times.length)
+          times.splice(0);
+        }
+      }, 20);
+    }
+    img.src = '../markers/64';
+  }
+</script>
+</head></html>

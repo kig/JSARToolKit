@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:dc="http://purl.org/dc/elements/1.1/"
+      xmlns:flickr="urn:flickr:"
+      xmlns:media="http://search.yahoo.com/mrss/">
+
+  <title>Content from Maps + Charts</title>
+  <link rel="self" href="http://api.flickr.com/services/feeds/photoset.gne?set=72157623591845011&amp;nsid=53976240@N00&amp;lang=en-us" />
+  <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/sets/72157623591845011"/>
+  <id>tag:flickr.com,2005:http://www.flickr.com/photos/53976240@N00/sets/72157623591845011</id>
+  <icon>http://farm3.static.flickr.com/2505/4133454244_cb65f1a783_s.jpg</icon>
+  <subtitle>Maps that I have made, and some google earth screenshots</subtitle>
+  <updated>2010-10-17T03:32:02Z</updated>
+  <generator uri="http://www.flickr.com/">Flickr</generator>
+
+  <entry>
+    <title>The London Galaxy - an average day spent in Central London according to Flickr users</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/5088414546/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/5088414546/in/set-72157623591845011</id>
+    <published>2010-10-17T03:32:02Z</published>
+    <updated>2010-10-17T03:32:02Z</updated>
+    <dc:date.Taken>2010-10-17T06:12:57-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/5088414546/&quot; title=&quot;The London Galaxy - an average day spent in Central London according to Flickr users&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4153/5088414546_bc61586de9_m.jpg&quot; width=&quot;240&quot; height=&quot;178&quot; alt=&quot;The London Galaxy - an average day spent in Central London according to Flickr users&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Routes within a 24 hour period.  Speed is shown from white (slower than 80m/min) to red (fastest). Background circle symbols are for photos with a high number of views. Some famous locations have been named. Can you name some more?&lt;br /&gt;
+&lt;br /&gt;
+Individual layers made with Processing ( &lt;a href=&quot;http://www.processing.org&quot; rel=&quot;nofollow&quot;&gt;www.processing.org&lt;/a&gt; ) and final the blending with GIMP ( &lt;a href=&quot;http://www.gimp.org&quot; rel=&quot;nofollow&quot;&gt;www.gimp.org&lt;/a&gt; ).  Data downloaded using Python code and the /Flickr API. Stored in PostGRES/PostGIS (as lat/long in WGS84).  Retrieved with Java (Processing) in Web Mercator projection.&lt;br /&gt;
+&lt;br /&gt;
+&lt;i&gt;edit: &lt;/i&gt; Keep in mind that date and time stored in photos are not always correct of course....&lt;br /&gt;
+&lt;br /&gt;
+Similar approaches:&lt;br /&gt;
+&lt;a href=&quot;http://www.flickr.com/photos/cvr70/5066198961/&quot;&gt;www.flickr.com/photos/cvr70/5066198961/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.flickr.com/photos/cvr70/5066792874/&quot;&gt;www.flickr.com/photos/cvr70/5066792874/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://www.flickr.com/photos/cvr70/5052588841/&quot;&gt;www.flickr.com/photos/cvr70/5052588841/&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4153/5088414546_1742a5a1fc_o.png" />
+    <category term="london" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="speed" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="gimp" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="processing" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="routes" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="python" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="org" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="processingorg" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="postgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="postgres" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Central London &quot;map&quot;</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/5066792874/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/5066792874/in/set-72157623591845011</id>
+    <published>2010-10-10T03:29:33Z</published>
+    <updated>2010-10-10T03:29:33Z</updated>
+    <dc:date.Taken>2010-10-10T06:17:59-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/5066792874/&quot; title=&quot;Central London &amp;quot;map&amp;quot;&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4112/5066792874_85950b45dd_m.jpg&quot; width=&quot;240&quot; height=&quot;190&quot; alt=&quot;Central London &amp;quot;map&amp;quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Circle sizes are according to number of views per photo.&lt;br /&gt;
+This time I used Processing ( &lt;a href=&quot;http://www.processing.org&quot; rel=&quot;nofollow&quot;&gt;www.processing.org&lt;/a&gt; ) and SQLibrary ( &lt;a href=&quot;http://bezier.de/processing/libs/sql/&quot; rel=&quot;nofollow&quot;&gt;bezier.de/processing/libs/sql/&lt;/a&gt; ) to interact with PostGRES. Some post editing in Picnik.&lt;br /&gt;
+&lt;br /&gt;
+I also used &lt;a href=&quot;http://graphics.cs.cmu.edu/projects/im2gps/flickr_code.html&quot; rel=&quot;nofollow&quot;&gt;part of this code&lt;/a&gt;  in Python to fetch location data using the Flickr API , and &lt;a href=&quot;http://www.pygresql.org/pg.html&quot; rel=&quot;nofollow&quot;&gt;PyGreSQL&lt;/a&gt; for PostGRES / Python interaction.&lt;br /&gt;
+&lt;br /&gt;
+A black &amp;amp; white version is &lt;a href=&quot;http://www.flickr.com/photos/cvr70/5066198961/i&quot;&gt; here &lt;/a&gt;.&lt;br /&gt;
+&lt;br /&gt;
+A different approach is &lt;a href=&quot;http://www.flickr.com/photos/cvr70/5052588841/&quot;&gt; here &lt;/a&gt;.&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4112/5066792874_64f5690979_o.jpg" />
+    <category term="london" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="java" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="photo" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="location" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="views" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="processing" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="processingorg" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="postgres" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Central London &quot;map&quot;</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/5066198961/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/5066198961/in/set-72157623591845011</id>
+    <published>2010-10-10T03:29:30Z</published>
+    <updated>2010-10-10T03:29:30Z</updated>
+    <dc:date.Taken>2010-10-10T06:25:46-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/5066198961/&quot; title=&quot;Central London &amp;quot;map&amp;quot;&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4090/5066198961_ba6dd2eeca_m.jpg&quot; width=&quot;240&quot; height=&quot;189&quot; alt=&quot;Central London &amp;quot;map&amp;quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Circle sizes are according to number of views per photo.&lt;br /&gt;
+This time I used Processing  - &lt;a href=&quot;http://www.processing.org&quot; rel=&quot;nofollow&quot;&gt;www.processing.org&lt;/a&gt; - and SQLibrary &lt;br /&gt;
+ - &lt;a href=&quot;http://bezier.de/processing/libs/sql/&quot; rel=&quot;nofollow&quot;&gt;bezier.de/processing/libs/sql/&lt;/a&gt; -  to interact with PostGRES/PostGIS. Some minor post editing in Picnik.&lt;br /&gt;
+&lt;br /&gt;
+I also used &lt;a href=&quot;http://graphics.cs.cmu.edu/projects/im2gps/flickr_code.html&quot; rel=&quot;nofollow&quot;&gt;part of this code&lt;/a&gt;  in Python to fetch location data using the Flickr API , and &lt;a href=&quot;http://www.pygresql.org/pg.html&quot; rel=&quot;nofollow&quot;&gt;PyGreSQL&lt;/a&gt; for PostGRES / Python interaction.&lt;br /&gt;
+&lt;br /&gt;
+A colour version is &lt;a href=&quot;http://www.flickr.com/photos/cvr70/5066792874/&quot;&gt;here&lt;/a&gt;.&lt;br /&gt;
+&lt;br /&gt;
+A different approach is &lt;a href=&quot;http://www.flickr.com/photos/cvr70/5052588841/&quot;&gt; here &lt;/a&gt;.&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4090/5066198961_c0f7d7d6f5_o.jpg" />
+    <category term="uk" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="london" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="java" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="photo" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="central" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="location" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="views" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="processing" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="python" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="processingorg" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="postgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="postgres" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="pygresql" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="sqlibrary" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>London, UK: mapping flickr tags to colours (draft)</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/5052588841/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/5052588841/in/set-72157623591845011</id>
+    <published>2010-10-08T23:10:15Z</published>
+    <updated>2010-10-08T23:10:15Z</updated>
+    <dc:date.Taken>2010-10-05T05:28:40-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/5052588841/&quot; title=&quot;London, UK: mapping flickr tags to colours (draft)&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4087/5052588841_eed5e63d66_m.jpg&quot; width=&quot;240&quot; height=&quot;136&quot; alt=&quot;London, UK: mapping flickr tags to colours (draft)&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;London might be the location with the most geotagged photos in Flickr. And tags are mostly in English. So it's the ideal place to experiment with the Flickr API.&lt;br /&gt;
+&lt;br /&gt;
+Blue is for water, rivers etc.&lt;br /&gt;
+Green for trees, parks and gardens&lt;br /&gt;
+Light orange for pubs&lt;br /&gt;
+Purple for museums&lt;br /&gt;
+&lt;br /&gt;
+(code in Python and data stored in PostGRES. Map made with QGIS, a few more technical details &lt;a href=&quot;http://www.flickr.com/photos/cvr70/4890881860/&quot;&gt; here.&lt;/a&gt;)&lt;br /&gt;
+&lt;br /&gt;
+A couple of other visual approaches:&lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://www.flickr.com/photos/cvr70/5066792874/&quot;&gt;www.flickr.com/photos/cvr70/5066792874/&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;a href=&quot;http://www.flickr.com/photos/cvr70/5066198961/&quot;&gt;www.flickr.com/photos/cvr70/5066198961/&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4087/5052588841_ac44b6614d_o.jpg" />
+    <category term="uk" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="england" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="london" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="open" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="tags" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="python" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="opensource" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="source" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="postgres" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="qgis" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>The Balkans and Italy as defined by the location of Flickr photos</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4890881860/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4890881860/in/set-72157623591845011</id>
+    <published>2010-10-08T23:10:15Z</published>
+    <updated>2010-10-08T23:10:15Z</updated>
+    <dc:date.Taken>2010-08-14T16:32:40-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4890881860/&quot; title=&quot;The Balkans and Italy as defined by the location of Flickr photos&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4139/4890881860_1c1b73f2f1_m.jpg&quot; width=&quot;240&quot; height=&quot;208&quot; alt=&quot;The Balkans and Italy as defined by the location of Flickr photos&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Each black dot is a Flickr photo&lt;br /&gt;
+Each tiny triangle is the presumed location of a Flickr user&lt;br /&gt;
+BTW this  is just a snapshot from some work still underway as some scripts are still running...&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+So this time I thought I'd go a little bit further with the Flickr API, and here's what I did:&lt;br /&gt;
+&lt;br /&gt;
+- First of all I installed &lt;a href=&quot;http://www.ubuntu.com/&quot; rel=&quot;nofollow&quot;&gt;Linux (Ubuntu 10.04)&lt;/a&gt; on my PC. I am not sure I would be patient enough to do all this in Windows - on my humble PC that is.  AFAIK it is the fastest to use distribution I have come across so far.&lt;br /&gt;
+&lt;br /&gt;
+- I installed &lt;a href=&quot;http://www.postgresql.org/&quot; rel=&quot;nofollow&quot;&gt;PostGRESQL&lt;/a&gt; with &lt;a href=&quot;http://postgis.refractions.net/&quot; rel=&quot;nofollow&quot;&gt;PostGIS&lt;/a&gt;. Learned a lot of interesting things you can do with geographic data - especially if you want to manage loads of them. Surprisingly enough both were installed very easily and very fast in Ubuntu Linux.&lt;br /&gt;
+&lt;br /&gt;
+-I used &lt;a href=&quot;http://graphics.cs.cmu.edu/projects/im2gps/flickr_code.html&quot; rel=&quot;nofollow&quot;&gt;part of this code&lt;/a&gt; in Python  (that was suggested by &lt;a href=&quot;http://www.flickr.com/photos/42973403@N07/&quot;&gt;Arcturus Aldebaran&lt;/a&gt;) in order to fetch data about photo and owners locations. BTW I had never used Python before and have to say that it was unbelievably easy to write code - it could be considered as the easiest programming language so far. Reading and writing to the PostGIS database was handled with &lt;a href=&quot;http://www.pygresql.org/pg.html&quot; rel=&quot;nofollow&quot;&gt;PyGreSQL&lt;/a&gt; for Python&lt;br /&gt;
+&lt;br /&gt;
+-To visualize data I used &lt;a href=&quot;http://udig.refractions.net/&quot; rel=&quot;nofollow&quot;&gt;uDig&lt;/a&gt; because the PostGIS database worked with hardly any error  contrary with gvSIG and OpenJUMP (alhough I am pretty sure they can both work with some database tweaking). Not much luck with ArcMap though  - yet - seems that ESRI products  demand things are done in a very *very* specific way.&lt;br /&gt;
+&lt;br /&gt;
+So far the script has retrieved 1,100,000 photo locations and 8,500 users out of which 7300 have filled in information on their location and out of which the 3000 could be related to a specific Flickr Place ID.&lt;br /&gt;
+&lt;br /&gt;
+The script is still running (the main reason being that there's a &amp;quot;query per second&amp;quot; limit with the Flickr API)&lt;br /&gt;
+The problems I faced were quite many: encoding of tags, titles and user names, dates and user timezones (which seem to play a significant role), lack of examples for PyGRESQL etc....but most of them were addressable&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+to be continued....(maybe in September? I think I need a real summer break!)&lt;br /&gt;
+&lt;br /&gt;
+P.S. The funny thing is I might have to delete the databases if I have understood correctly the &lt;a href=&quot;http://www.flickr.com/services/api/tos/&quot;&gt;Terms of Use for Flickr API&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4139/4890881860_b71f94ea6d_o.jpg" />
+    <category term="italy" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="turkey" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geotagged" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="greece" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="linux" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="balkans" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="ubuntu" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geotag" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="udig" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="postgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="postgres" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="photolocations" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="userlocations" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="pygresql" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Οικισμοί/Τοπωνύμια της Ελλάδας με 3 (ή 2) γράμματα (Greek placenames/villages with two or three letters)</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4880032111/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4880032111/in/set-72157623591845011</id>
+    <published>2010-10-08T23:10:15Z</published>
+    <updated>2010-10-08T23:10:15Z</updated>
+    <dc:date.Taken>2010-08-11T01:14:24-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4880032111/&quot; title=&quot;Οικισμοί/Τοπωνύμια της Ελλάδας με 3 (ή 2) γράμματα (Greek placenames/villages with two or three letters)&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4080/4880032111_1f08134d4c_m.jpg&quot; width=&quot;240&quot; height=&quot;207&quot; alt=&quot;Οικισμοί/Τοπωνύμια της Ελλάδας με 3 (ή 2) γράμματα (Greek placenames/villages with two or three letters)&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Βάι&lt;br /&gt;
+Δίο&lt;br /&gt;
+Εύα&lt;br /&gt;
+Ήρα&lt;br /&gt;
+Θέα&lt;br /&gt;
+Ίδα&lt;br /&gt;
+Ίνι&lt;br /&gt;
+Ίος&lt;br /&gt;
+Κως&lt;br /&gt;
+Λιά&lt;br /&gt;
+Οία&lt;br /&gt;
+Πόα&lt;br /&gt;
+Ρίο&lt;br /&gt;
+Ρίο&lt;br /&gt;
+Φρυ&lt;br /&gt;
+Ψι&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+Για τους λάτρεις των σταυρόλεξων κ όχι μόνον....&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4080/4880032111_4739c3b3b5_o.jpg" />
+    <category term="short" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="placenames" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="threeletters" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="mapgreece" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="τρία" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="γράμματα" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="οικισμόσ" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="οικισμοί3" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Travelling in and around Greece</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4855265166/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4855265166/in/set-72157623591845011</id>
+    <published>2010-10-08T23:10:15Z</published>
+    <updated>2010-10-08T23:10:15Z</updated>
+    <dc:date.Taken>2010-08-03T02:33:26-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4855265166/&quot; title=&quot;Travelling in and around Greece&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4134/4855265166_1623b81d2e_m.jpg&quot; width=&quot;240&quot; height=&quot;160&quot; alt=&quot;Travelling in and around Greece&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;OK, that's the second effort (first one &lt;a href=&quot;http://www.flickr.com/photos/cvr70/4822781308/&quot;&gt;is here&lt;/a&gt;)  to depict connections in this geographic area from Flickr photos using the Flickr API.&lt;br /&gt;
+&lt;br /&gt;
+This time I managed to retrieve nearly 190,000 photos using a geographic query for the bounding box for Greece (so some pictures from neighbouring countries were also retrieved, something that revealed some interesting patterns, like connections to and from Istanbul).&lt;br /&gt;
+&lt;br /&gt;
+ - Grey lines connect individual photos that belong to the same user sorted by the date they were taken and regardless of the time span&lt;br /&gt;
+&lt;br /&gt;
+ - Dark blue lines connect pictures of the same user taken within one day (24 h) - sorted by hour&lt;br /&gt;
+&lt;br /&gt;
+ - Light blue lines connect pictures of the same user taken within one hour (1 h) - sorted by minute&lt;br /&gt;
+&lt;br /&gt;
+Orange dots are the large cities in Greece (prefecture capitals that is)&lt;br /&gt;
+Tiny black dots are for each photo retrieved.&lt;br /&gt;
+&lt;br /&gt;
+Many patterns start to reveal (and some of them are interesting if not fascinating), however nothing is pretty safe to assume - yet. Raw data still need lots of cleanup e.g. many pictures seem to have errors in the date they were taken...Have to say that I am not completely satisfied with the result simply because I am not sure about the raw data I used.... &lt;br /&gt;
+&lt;br /&gt;
+Anyhow, next time I will be using Python (thanks to &lt;a href=&quot;http://www.flickr.com/photos/42973403@N07/&quot;&gt;Arcturus Aldebaran&lt;/a&gt; for the code suggestion) with PostGRESQL (and maybe with PostGIS). With PHP there's not much user control, retrieving data from a text file is pretty slow and ArcGIS personal geodatabases in Access have some limitations.&lt;br /&gt;
+&lt;br /&gt;
+As for the number of views for each photo: Arcmap took ages to draw the image, so simply I omitted that.&lt;br /&gt;
+&lt;br /&gt;
+Oh, I forgot to mention that I also used the &lt;a href=&quot;http://www.ian-ko.com/&quot; rel=&quot;nofollow&quot;&gt;ET Geowizard&lt;/a&gt; toolbox&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4134/4855265166_3c6a6cb776_o.jpg" />
+    <category term="travel" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="greece" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="commute" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="commuting" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="et" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickrapi" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="connect" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcmap" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="phpflickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="argcis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geowizard" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>World map of geotagged photos for flickr group &quot;Strictly Geotagged&quot;</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4686336591/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4686336591/in/set-72157623591845011</id>
+    <published>2010-10-08T23:10:15Z</published>
+    <updated>2010-10-08T23:10:15Z</updated>
+    <dc:date.Taken>2010-06-10T04:14:10-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4686336591/&quot; title=&quot;World map of geotagged photos for flickr group &amp;quot;Strictly Geotagged&amp;quot;&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4022/4686336591_2fae7dfd3d_m.jpg&quot; width=&quot;240&quot; height=&quot;140&quot; alt=&quot;World map of geotagged photos for flickr group &amp;quot;Strictly Geotagged&amp;quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;World map of geotagged photos for flickr group &lt;a href=&quot;http://www.flickr.com/groups/strictlygeotagged/&quot;&gt;&amp;quot;Strictly Geotagged&amp;quot;&lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+That was a quite large number of geotagged photos (nearly 83,000). I thought that running the PHP script  could end up with getting a &amp;quot;ban&amp;quot; from the flickr farm servers for exceeding the maximum number of queries per second....Well nothing like that happened.&lt;br /&gt;
+&lt;br /&gt;
+Each dot is a photo, and the vertical bars show the number of views per photo. Although no background was used, some physical features like the coastline can be easily distinguished.&lt;br /&gt;
+&lt;br /&gt;
+Don't know why, but it reminds me of an Absolut vodka ad....&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4022/4686336591_7bb6e8c30e_o.jpg" />
+    <category term="world" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="bar" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geotagged" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="photos" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="group" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="cartography" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="views" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="php" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="visualization" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="mapping" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="strictly" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="thematic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcmap" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="phpflickr" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Fractal trees</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4462972870/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4462972870/in/set-72157623591845011</id>
+    <published>2010-10-08T23:10:15Z</published>
+    <updated>2010-10-08T23:10:15Z</updated>
+    <dc:date.Taken>2010-03-25T19:37:10-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4462972870/&quot; title=&quot;Fractal trees&quot;&gt;&lt;img src=&quot;http://farm3.static.flickr.com/2758/4462972870_282bd8e94d_m.jpg&quot; width=&quot;240&quot; height=&quot;150&quot; alt=&quot;Fractal trees&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Based on an example found with Processing 1.0. Added some fading out result, variable hue/saturation/stroke width and replaced straight lines with curves. Made with Processing 1.0 - &lt;a href=&quot;http://processing.org&quot; rel=&quot;nofollow&quot;&gt;processing.org&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm3.static.flickr.com/2758/4462972870_1ca02238a5_o.jpg" />
+    <category term="trees" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="tree" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="art" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="math" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="generative" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="processing" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="fractal" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="δέντρα" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="δέντρο" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="δένδρο" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="δενδρο" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="processing10" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Math flower (b&amp;w)</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4460783025/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4460783025/in/set-72157623591845011</id>
+    <published>2010-10-08T23:10:15Z</published>
+    <updated>2010-10-08T23:10:15Z</updated>
+    <dc:date.Taken>2010-03-25T03:53:18-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4460783025/&quot; title=&quot;Math flower (b&amp;amp;w)&quot;&gt;&lt;img src=&quot;http://farm3.static.flickr.com/2755/4460783025_f9fa4a215b_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Math flower (b&amp;amp;w)&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;B&amp;amp;W version of a flower like shape, produced by moving the center of a circle with a decreasing radius along a simple linear spiral. Made with Processing 1.0 (http://processing.org/)  . &lt;br /&gt;
+&lt;br /&gt;
+Code:&lt;br /&gt;
+&lt;br /&gt;
+&lt;br /&gt;
+float r;&lt;br /&gt;
+&lt;br /&gt;
+// Angle and angular velocity, acceleration&lt;br /&gt;
+float theta;&lt;br /&gt;
+float theta_vel;&lt;br /&gt;
+float theta_acc;&lt;br /&gt;
+&lt;br /&gt;
+void setup() {&lt;br /&gt;
+  colorMode(HSB,255);&lt;br /&gt;
+  size(1024, 768);&lt;br /&gt;
+  frameRate(60);&lt;br /&gt;
+  smooth();&lt;br /&gt;
+  r = width/2-10;&lt;br /&gt;
+  theta = 0;&lt;br /&gt;
+  theta_vel = PI/4096;&lt;br /&gt;
+  theta_acc = PI/4096;&lt;br /&gt;
+  background(0);&lt;br /&gt;
+}&lt;br /&gt;
+&lt;br /&gt;
+void draw() {&lt;br /&gt;
+  fill(0,0);&lt;br /&gt;
+  rect(0,0,width,height);&lt;br /&gt;
+  translate(width/2, height/2);&lt;br /&gt;
+&lt;br /&gt;
+  float x = r * cos(theta);&lt;br /&gt;
+  float y = r * sin(theta);&lt;br /&gt;
+  &lt;br /&gt;
+  strokeWeight(1);&lt;br /&gt;
+  stroke(abs(norm(theta,0,2*PI)*255-theta_vel),1,abs(255-theta_vel),40);&lt;br /&gt;
+  ellipse(x,y,r*2,r*2);&lt;br /&gt;
+  &lt;br /&gt;
+  theta_vel += theta_acc;&lt;br /&gt;
+  theta += theta_vel;&lt;br /&gt;
+  if (theta&amp;gt;2*PI){theta=0;}&lt;br /&gt;
+  r=r-theta_vel;&lt;br /&gt;
+  if (abs(r)&amp;gt;(width/2)) {r = width/2;}&lt;br /&gt;
+&lt;br /&gt;
+}&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm3.static.flickr.com/2755/4460783025_d7712b0187_o.jpg" />
+    <category term="flower" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="generativeart" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="processing10" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="movingcircle" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Sined</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4454590899/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4454590899/in/set-72157623591845011</id>
+    <published>2010-10-08T23:10:15Z</published>
+    <updated>2010-10-08T23:10:15Z</updated>
+    <dc:date.Taken>2010-03-22T22:24:51-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4454590899/&quot; title=&quot;Sined&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4040/4454590899_d976faeaf0_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Sined&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Some samples of generative art. Drawing sine/cosine waves with variable hue, saturation and brush size (changed with mouse movement). Made with Processing 1.0  - &lt;a href=&quot;http://processing.org&quot; rel=&quot;nofollow&quot;&gt;processing.org&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4040/4454590899_d625ebe3bb_o.jpg" />
+    <category term="processing" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="sine" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="generativeart" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="cosine" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="trigonometric" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Mouse painting</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4441507585/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4441507585/in/set-72157623591845011</id>
+    <published>2010-10-08T23:10:15Z</published>
+    <updated>2010-10-08T23:10:15Z</updated>
+    <dc:date.Taken>2010-03-18T03:18:44-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4441507585/&quot; title=&quot;Mouse painting&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4022/4441507585_02de1ed0ca_m.jpg&quot; width=&quot;240&quot; height=&quot;150&quot; alt=&quot;Mouse painting&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2 hours of mouse movement can produce this... Black circles made when mouse paused. Produced with IOGraphica&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4022/4441507585_0c71081ace_o.png" />
+    <category term="mouse" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="iographica" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Travelling around &quot;GREECE!&quot;</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4822781308/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4822781308/in/set-72157623591845011</id>
+    <published>2010-07-24T02:12:53Z</published>
+    <updated>2010-07-24T02:12:53Z</updated>
+    <dc:date.Taken>2010-07-24T04:54:54-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4822781308/&quot; title=&quot;Travelling around &amp;quot;GREECE!&amp;quot;&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4135/4822781308_b3f2363eba_m.jpg&quot; width=&quot;240&quot; height=&quot;161&quot; alt=&quot;Travelling around &amp;quot;GREECE!&amp;quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Sample data taken with a custom script using PHPFlickr from flickr's group: &lt;a href=&quot;http://www.flickr.com/groups/greece/&quot;&gt; GREECE! &lt;/a&gt;&lt;br /&gt;
+&lt;br /&gt;
+Total number of geotagged photos retrieved 22,820&lt;br /&gt;
+&lt;br /&gt;
+Grey lines connect individual photos that belong to the same user sorted by the date they were taken. The darker the line, the more pictures the user has uploaded in this specific group. Red circles are for each photo's number of views (they are not necessarily related to the popularity of each location or the total number of photos of a locality) . &lt;br /&gt;
+&lt;br /&gt;
+You can see that some popular domestic routes are revealed...next task is to separate those pics taken by visitors and those taken by locals.... &lt;br /&gt;
+&lt;i&gt;Edit: next task would rather be to collect *all* geotagged photos for Greece...&lt;/i&gt;&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4135/4822781308_4eb951e681_o.jpg" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="greece" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="cartography" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="views" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="thematic" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Map of geotagged photos for the &quot;SkyAsCanvas&quot; flickr group, Europe, version #1</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4680778248/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4680778248/in/set-72157623591845011</id>
+    <published>2010-06-08T14:14:46Z</published>
+    <updated>2010-06-08T14:14:46Z</updated>
+    <dc:date.Taken>2010-06-08T04:00:12-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4680778248/&quot; title=&quot;Map of geotagged photos for the &amp;quot;SkyAsCanvas&amp;quot; flickr group, Europe, version #1&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4042/4680778248_5556ef633d_m.jpg&quot; width=&quot;240&quot; height=&quot;170&quot; alt=&quot;Map of geotagged photos for the &amp;quot;SkyAsCanvas&amp;quot; flickr group, Europe, version #1&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a &amp;quot;close up&amp;quot; of &lt;a href=&quot;http://www.flickr.com/photos/cvr70/4676067744/&quot;&gt;this map&lt;/a&gt;, that shows most of the geotagged photos for the &lt;a href=&quot;http://www.flickr.com/groups/skycanvas/&quot;&gt;SkyAsCanvas Flickr group&lt;/a&gt;. The background is a shaded relief layer retrieved from ESRI online services.&lt;br /&gt;
+&lt;br /&gt;
+A different, darker, version &lt;a href=&quot;http://www.flickr.com/photos/cvr70/4682244366/&quot;&gt;can be seen here.&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4042/4680778248_123de7e6a6_o.jpg" />
+    <category term="geotagged" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="europe" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="photos" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="group" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="cartography" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="views" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="php" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="data" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="visualization" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="mapping" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geo" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geotag" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="esri" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="thematic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcmap" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="phpflickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geodata" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="skyascanvas" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Map of geotagged photos for the &quot;SkyAsCanvas&quot; flickr group, Europe, version #2</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4682244366/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4682244366/in/set-72157623591845011</id>
+    <published>2010-06-08T14:14:42Z</published>
+    <updated>2010-06-08T14:14:42Z</updated>
+    <dc:date.Taken>2010-06-08T16:29:30-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4682244366/&quot; title=&quot;Map of geotagged photos for the &amp;quot;SkyAsCanvas&amp;quot; flickr group, Europe, version #2&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4052/4682244366_16c4429b75_m.jpg&quot; width=&quot;240&quot; height=&quot;205&quot; alt=&quot;Map of geotagged photos for the &amp;quot;SkyAsCanvas&amp;quot; flickr group, Europe, version #2&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A close up for Europe. Red circles: views per photo. White areas: Urban fabric. Light gray: road netowrk. A different, &amp;quot;lighter&amp;quot; &lt;a href=&quot;http://www.flickr.com/photos/cvr70/4680778248/&quot;&gt;version of this map is here.&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4052/4682244366_57a8b9a2c5_o.jpg" />
+    <category term="road" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="urban" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geotagged" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="photo" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="europe" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="gis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="fabric" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="views" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="data" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="network" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="visualization" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="mapping" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geo" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geotag" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="esri" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="thematic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcmap" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="phpflickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geodata" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="skyascanvas" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Map of geotagged photos for flickr group &quot;GREECE!&quot;, Athens area</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4679951580/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4679951580/in/set-72157623591845011</id>
+    <published>2010-06-07T19:55:59Z</published>
+    <updated>2010-06-07T19:55:59Z</updated>
+    <dc:date.Taken>2010-06-07T22:55:52-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4679951580/&quot; title=&quot;Map of geotagged photos for flickr group &amp;quot;GREECE!&amp;quot;, Athens area&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4036/4679951580_16107d8155_m.jpg&quot; width=&quot;240&quot; height=&quot;170&quot; alt=&quot;Map of geotagged photos for flickr group &amp;quot;GREECE!&amp;quot;, Athens area&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Retrieved some spatial data with Flick API, from the pool of group &lt;a href=&quot;http://www.flickr.com/groups/greece/&quot;&gt;GREECE!&lt;/a&gt;.  Technical details explained &lt;a href=&quot;http://www.flickr.com/photos/cvr70/4676067744/&quot;&gt;here&lt;/a&gt;. Soon, there will be  a large version depicting entire Greece...&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4036/4679951580_3a761c0960_o.jpg" />
+    <category term="geotagged" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="image" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="photos" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="satellite" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="gis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="athens" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="greece" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="views" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="data" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="mapping" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geo" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geotag" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="esri" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="thematic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcmap" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="phpflickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geodata" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>World map of geotagged photos for the &quot;SkyAsCanvas&quot; flickr group</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4676067744/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4676067744/in/set-72157623591845011</id>
+    <published>2010-06-06T20:02:34Z</published>
+    <updated>2010-06-06T20:02:34Z</updated>
+    <dc:date.Taken>2010-06-06T22:37:43-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4676067744/&quot; title=&quot;World map of geotagged photos for the &amp;quot;SkyAsCanvas&amp;quot; flickr group&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4029/4676067744_40847a25d2_m.jpg&quot; width=&quot;240&quot; height=&quot;170&quot; alt=&quot;World map of geotagged photos for the &amp;quot;SkyAsCanvas&amp;quot; flickr group&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;OK I may have to admit I am a bit addicted to Flickr. Anyhow, I thought I should give a try to the &lt;a href=&quot;http://www.flickr.com/services/api/&quot;&gt;Flickr API&lt;/a&gt; and see what it is all about. For a start, I tried to visualize all geotagged photos from the group &lt;a href=&quot;http://www.flickr.com/groups/skycanvas/&quot;&gt;SkyAsCanvas&lt;/a&gt;, which includes about 32000 items or so. I finally managed to include about 5670 of those photos on the map. The size of red symbols is proportional to the number of views per photo. Europe looks rather crowded, so a &amp;quot;closeup&amp;quot; &lt;a href=&quot;http://www.flickr.com/photos/cvr70/4680778248/&quot;&gt;can be seen here&lt;/a&gt; and &lt;a href=&quot;http://www.flickr.com/photos/cvr70/4682244366/&quot;&gt;here&lt;/a&gt;.&lt;br /&gt;
+&lt;br /&gt;
+About the technical details:&lt;br /&gt;
+The data were retrieved with a quite simple PHP 5 script using the &lt;a href=&quot;http://phpflickr.com/&quot; rel=&quot;nofollow&quot;&gt;phpFlickr&lt;/a&gt; library, which produced a file output with all available information on each photo. It took about an hour or so to finish (as I tried not to create too many requests per second). That file was then imported into OpenOffice Calc, and then into ArcMap as XLS and voila, a pretty straightforward visualization (with no Flannery appearance compensation which produces rather large symbols). Unfortunately not all geotagged records made it into the map, some had serious formatting problems which ArcMap doesn't seem to tolerate at all. I'll try to fix this in the future...&lt;br /&gt;
+As for the background, it comes from the US National Park Service added through the ESRI online web services, and it is a physical map at 1.24km per pixel for the world (and 500m for the coterminous United States). &lt;br /&gt;
+Oh, and the projection is Web Mercator!&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-nd/2.0/deed.en" />
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4029/4676067744_4d4763011d_o.jpg" />
+    <category term="world" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="park" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geotagged" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="photos" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="gis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="group" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="projection" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="national" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="views" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="php" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="data" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="visualization" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="mapping" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geo" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geotag" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="api" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="physical" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="esri" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="mercator" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="thematic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcmap" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="phpflickr" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geodata" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flickrmapping" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="skyascanvas" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Air traffic in Greek Airports</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4648382291/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4648382291/in/set-72157623591845011</id>
+    <published>2010-06-03T18:21:48Z</published>
+    <updated>2010-06-03T18:21:48Z</updated>
+    <dc:date.Taken>2010-05-29T04:14:51-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4648382291/&quot; title=&quot;Air traffic in Greek Airports&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4045/4648382291_40703a68a6_m.jpg&quot; width=&quot;240&quot; height=&quot;170&quot; alt=&quot;Air traffic in Greek Airports&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Made in ArcGIS&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4045/4648382291_01902f7506_o.jpg" />
+    <category term="plane" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="airplane" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="greek" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="airport" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="traffic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="aviation" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="authority" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="flight" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="graph" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="international" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="domestic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="cartography" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="planes" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="data" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="statistics" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="airports" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="mapping" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geo" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="hellenic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcgis" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="thematic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="ελλάδα" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geodata" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="κίνηση" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="αεροδρόμιο" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="χάρτησ" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="αριθμόσ" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="αεροσκαφών" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="διάγραμμα" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="thingsthatgoogleearthcannottellyou" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="αεροδρόμια" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="αεροπλάνων" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>Air traffic in Greek Airports - detailed</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4650870798/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4650870798/in/set-72157623591845011</id>
+    <published>2010-06-03T18:21:44Z</published>
+    <updated>2010-06-03T18:21:44Z</updated>
+    <dc:date.Taken>2010-05-29T22:39:50-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4650870798/&quot; title=&quot;Air traffic in Greek Airports - detailed&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4022/4650870798_475a08265e_m.jpg&quot; width=&quot;240&quot; height=&quot;183&quot; alt=&quot;Air traffic in Greek Airports - detailed&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A more detailed map of traffic in Greek airports during 1994-2008. Made entirely in ArcGIS.&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4022/4650870798_b20b456e9a_o.jpg" />
+    <category term="greek" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="airport" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="traffic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="air" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="graph" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="international" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="domestic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="diagram" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="data" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="statistics" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="1994" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="airports" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="visualization" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="visual" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="mapping" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="2008" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geo" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="thematic" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="geodata" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="εσωτερικού" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="ελληνικά" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="κίνηση" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="αεροδρόμια" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="εξωτερικού" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+  <entry>
+    <title>European road network and the urban fabric</title>
+    <link rel="alternate" type="text/html" href="http://www.flickr.com/photos/cvr70/4665835515/in/set-72157623591845011/"/>
+    <id>tag:flickr.com,2005:/photo/4665835515/in/set-72157623591845011</id>
+    <published>2010-06-03T18:21:17Z</published>
+    <updated>2010-06-03T18:21:17Z</updated>
+    <dc:date.Taken>2010-06-03T17:06:40-08:00</dc:date.Taken>
+    <content type="html">			&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/people/cvr70/&quot;&gt;-Christophoros-&lt;/a&gt; posted a photo:&lt;/p&gt;
+	
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/cvr70/4665835515/&quot; title=&quot;European road network and the urban fabric&quot;&gt;&lt;img src=&quot;http://farm5.static.flickr.com/4050/4665835515_f502c6a546_m.jpg&quot; width=&quot;240&quot; height=&quot;212&quot; alt=&quot;European road network and the urban fabric&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;ArcGIS + AI&lt;/p&gt;</content>
+    <author>
+      <name>-Christophoros-</name>
+      <uri>http://www.flickr.com/people/cvr70/</uri>
+      <flickr:nsid>53976240@N00</flickr:nsid>
+    </author>
+    <link rel="enclosure" type="image/jpeg" href="http://farm5.static.flickr.com/4050/4665835515_8e5d61ac6d_o.jpg" />
+    <category term="road" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="europe" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="european" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="map" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="cartography" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="network" scheme="http://www.flickr.com/photos/tags/" />
+    <category term="arcgis" scheme="http://www.flickr.com/photos/tags/" />
+  </entry>
+
+
+</feed>

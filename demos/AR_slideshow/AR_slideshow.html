@@ -1,0 +1,553 @@
+<html><head>
+<script src="../../src/NyAs3Utils.js"></script>
+<script src="../../src/FLARArrayUtil.js"></script>
+<script src="../../src/FLARException.js"></script>
+<script src="../../src/FLARMat.js"></script>
+<script src="../../src/FLARRgbPixelReader.js"></script>
+<script src="../../src/NyARHistogramAnalyzer.js"></script>
+<script src="../../src/NyARPca2d.js"></script>
+<script src="../../src/NyARRasterReader.js"></script>
+<script src="../../src/NyARTypes.js"></script>
+<script src="../../src/FLARRasterFilter.js"></script>
+<script src="../../src/FLARTypes.js"></script>
+<script src="../../src/NyARLabel.js"></script>
+<script src="../../src/FLARLabeling.js"></script>
+<script src="../../src/NyARParam.js"></script>
+<script src="../../src/FLARParam.js"></script>
+<script src="../../src/NyARRaster.js"></script>
+<script src="../../src/FLARRaster.js"></script>
+<script src="../../src/NyARCode.js"></script>
+<script src="../../src/FLARCode.js"></script>
+<script src="../../src/NyARMatch.js"></script>
+<script src="../../src/NyARRasterAnalyzer.js"></script>
+<script src="../../src/FLARRasterAnalyzer.js"></script>
+<script src="../../src/NyARRasterFilter.js"></script>
+<script src="../../src/NyARSquareDetect.js"></script>
+<script src="../../src/FLARSquareDetect.js"></script>
+<script src="../../src/NyARTransMat.js"></script>
+<script src="../../src/FLARTransMat.js"></script>
+<script src="../../src/NyARUtils.js"></script>
+<script src="../../src/NyARIdMarker.js"></script>
+<script src="../../src/NyARPickup.js"></script>
+<script src="../../src/FLARProcessor.js"></script>
+<script src="../../src/NyARDetector.js"></script>
+<script src="../../src/FLARDetector.js"></script>
+<script src="../../src/FLARIdMarkerDetector.js"></script>
+<script src="../../src/NyARSingleMarkerProcesser.js"></script>
+<script src="../../src/NyUtils.js"></script>
+<script src="../magi.js"></script>
+<script>
+/**
+  CPSQueue serializes a bunch of callbacks, which is useful for e.g. loading
+  images in order.
+
+  To use CPSQueue, first create it passing the call function as argument:
+
+    var q = new CPSQueue(function(src, callback, onError){
+      var img = new Image()
+      img.onload = callback
+      img.onerror = onError
+      img.onabort = onError
+      img.src = src
+    })
+
+  Then use the queue by calling append:
+
+    Rg(1,10).forEach(function(i){
+      q.append(i+".jpg",
+        function(){ console.log("Loaded "+this.src) },
+        function(){ console.log("Failed to load "+this.src) })
+    })
+
+  Now you should see that the images load (or fail to load) in the same order
+  as they were appended, even if 1.jpg is 5MB and 2.jpg is 1kB in size.
+  */
+CPSQueue = Klass({
+  initialize : function(call, cond, merge) {
+    this.queue = [];
+    if (call) this.call = call;
+    if (cond) this.cond = cond;
+    if (merge) this.merge = merge;
+  },
+
+  append : function (args, callback, onError) {
+    if (this.cond.call(this, args)) {
+      if (callback) callback(args);
+    } else {
+      this.queue.push({args: args, callback: callback, onError: onError});
+      this.process();
+    }
+  },
+
+  abort : function() {
+    this.queue = [];
+    this.aborted = true;
+  },
+
+  process : function() {
+    if (this.processing) return;
+    this.aborted = false;
+    this.processing = true;
+    this.queue = this.merge(this.queue);
+    var t = this.queue.shift();
+    while (t) {
+      if (this.cond.call(this, t.args)) {
+        if (t.callback) t.callback(t.args);
+        t = this.queue.shift();
+      } else {
+        break;
+      }
+    }
+    if (!t) {
+      this.processing = false;
+      return;
+    }
+    var self = this;
+    this.call(t.args, function(arg) {
+      if (!self.aborted) {
+        if (t.callback) t.callback(t.args, arg);
+      }
+      self.processing = false;
+      self.process();
+    }, function(arg) {
+      if (t.onError) t.onError(t.args, arg);
+      self.processing = false;
+      self.process();
+    })
+  },
+
+  merge : function(q) {
+    return q;
+  },
+
+  call : function(args, cb) {
+    cb(args);
+  },
+
+  cond : function(args) {
+    return false;
+  }
+});
+
+UploadNotification = Klass({
+  initialize : function(file, container) {
+    this.file = file;
+    this.progressElem = E.canvas(30, 30);
+    this.elem = DIV({className: 'uploadNotification'},
+      this.progressElem,
+      H3(file.name),
+      SPAN(this.formatSize(file.size, "B"))
+    );
+    container.appendChild(this.elem);
+  },
+
+  formatSize : function(b, unit) {
+    var mags = ["", "k", "M", "G", "T", "P", "E"];
+    var i,j;
+    for (i=0, j=1000; i<mags.length && j<b; i++, j*=1000)
+      null;
+    if (i == 0) {
+      return b + unit;
+    } else {
+      var s = parseInt(10 * b / (j/1000)) / 10;
+      return s + mags[i] + unit;
+    }
+  },
+
+  onprogress : function(x) {
+    var w = this.progressElem.width, h = this.progressElem.height;
+    var ctx = this.progressElem.getContext('2d');
+    ctx.clearRect(0,0,w,h);
+    var r = Math.min(w,h) / 2 - 5;
+    ctx.beginPath();
+    ctx.arc(w/2,h/2, r, 0, Math.PI*2, false);
+    ctx.strokeStyle = "rgba(255,255,255, 0.2)"
+    ctx.lineWidth = 8;
+    ctx.stroke();
+    ctx.beginPath();
+    var top = -Math.PI/2;
+    var frac = x.loaded / x.total;
+    if (x.type == 'load') frac = 1;
+    if (x.type == 'loadstart') frac = 0;
+    ctx.arc(w/2,h/2, r, top, top+frac*Math.PI*2, false);
+    ctx.strokeStyle = "rgba(0,192,255, 0.8)"
+    ctx.lineWidth = 9;
+    ctx.stroke();
+  },
+
+  upload : function(callback, onerror) {
+    var self = this;
+    this.xhr = DnDUpload.uploadFile(this.file, {}, function(x) {
+      self.fadeStart = new Date();
+      self.fadeInterval = setInterval(function() {
+        var elapsed = new Date() - self.fadeStart;
+        var f = elapsed / 500;
+        if (f >= 1) {
+          f = 1;
+          self.elem.parentNode.removeChild(self.elem);
+          clearInterval(self.fadeInterval);
+        }
+        self.elem.opacity = 1 - f;
+      }, 15);
+      callback();
+    }, function(x) {
+      self.elem.appendChild(H3("Error: " + x.toString()));
+      onerror();
+    },
+    function(x){ self.onprogress(x) });
+  }
+});
+
+DnDUpload = Klass({
+  formData : function(name, value, filename, headers) {
+    var CRLF = '\r\n';
+    var s = 'Content-Disposition: form-data; ';
+    s += 'name="'+name+'"';
+    if (filename) s += '; filename="'+filename+'"';
+    if (headers) s += CRLF + headers;
+    s += CRLF + CRLF + value + CRLF;
+    return s;
+  },
+
+  generateBoundary : function(parts) {
+    var b;
+    var found = true;
+    while (found) {
+      found = false;
+      b = Math.random() + "---BOUNDARY---" + new Date().getTime();
+      for (var i=0; i<parts.length; i++) {
+        if (parts[i].indexOf(b) != -1) {
+          found = true;
+          break;
+        }
+      }
+    }
+    return b;
+  },
+
+  sendFileUpload : function(xhr, parts, callback, onerror, onprogress) {
+    xhr.open("POST", this.path);
+    if (callback)
+      xhr.addEventListener('load', callback, false);
+    if (onerror)
+      xhr.addEventListener('error', onerror, false);
+    if (onprogress) {
+      xhr.upload.addEventListener('error', function(x) {
+      }, false);
+      xhr.upload.addEventListener('load', onprogress, false);
+      xhr.upload.addEventListener('loadstart', onprogress, false);
+      xhr.upload.addEventListener('progress', onprogress, false);
+    }
+    if (window.FormData && parts instanceof window.FormData) {
+      xhr.send(parts);
+    } else {
+      var CRLF = '\r\n';
+      var boundary = this.generateBoundary(parts);
+      var req = "--" + boundary + CRLF +
+                parts.join("--" + boundary + CRLF) +
+                "--" + boundary + "--" + CRLF;
+      var ct = "multipart/form-data; boundary=" + boundary;
+      xhr.setRequestHeader("Content-Type", ct);
+      xhr.sendAsBinary(req);
+    }
+  },
+
+  uploadFile : function(file, opts, callback, onerror, onprogress) {
+    return this.uploadFiles([file], opts, callback, onerror, onprogress);
+  },
+
+  uploadFiles : function(files, opts, callback, onerror, onprogress) {
+    var xhr = new XMLHttpRequest;
+    if (!(window.FormData || xhr.sendAsBinary))
+      throw("Can't upload files!");
+    var self = this;
+    var parts;
+    if (window.FormData) {
+      parts = new FormData();
+    } else {
+      parts = [];
+      parts.append = function(key, value) {
+        if (value.getAsBinary)
+          this.push( self.formData(key, value.getAsBinary(), value.name, "Content-Type: "+value.type) );
+        else
+          this.push( self.formData(key, value) );
+      };
+    }
+    for (var i=0; i<files.length; i++)
+      parts.append("files", files[i]);
+    self.sendFileUpload(xhr, parts, callback, onerror, onprogress);
+    return xhr;
+  },
+
+  getUploadQueue : function() {
+    if (!this.uploadQueue)
+      this.uploadQueue = new CPSQueue(function(notification, callback, onerror) {
+        notification.upload(callback, onerror);
+      });
+    return this.uploadQueue;
+  },
+
+  upload : function(files, notificationElement) {
+    var uq = this.getUploadQueue();
+    toArray(files).forEach(function(file) {
+      var notification = new UploadNotification(file, notificationElement);
+      uq.append(notification);
+    });
+  },
+
+  setupTarget : function(cont, callback) {
+    var self = this;
+
+    var hasFiles = function(ev) {
+      return ev.dataTransfer &&
+            (ev.dataTransfer.hasOwnProperty('files') ||
+             ev.dataTransfer.__lookupGetter__('files'));
+    };
+
+    cont.addEventListener('dragenter', function(ev) {
+      if (!hasFiles(ev)) return;
+      this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
+      Event.stop(ev);
+    }, false);
+    cont.addEventListener('dragleave', function(ev) {
+      if (!hasFiles(ev)) return;
+      this.style.backgroundColor = 'transparent';
+      Event.stop(ev);
+    }, false);
+    cont.addEventListener('dragover', function(ev) {
+      if (!hasFiles(ev)) return;
+      this.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
+      Event.stop(ev);
+    }, false);
+    cont.addEventListener('drop', function(ev) {
+      if (!hasFiles(ev)) return;
+      this.style.backgroundColor = 'transparent';
+      Event.stop(ev);
+      if (callback)
+        callback(ev.dataTransfer.files, this);
+      else
+        self.upload(ev.dataTransfer.files, this);
+    }, false);
+  }
+});
+</script>
+<script>
+  threshold = 50;
+  DEBUG = false;
+  var xhr = new XMLHttpRequest;
+  xhr.open("GET", "photos2.xml", false);
+  photos = [];
+  xhr.addEventListener('load', function(){
+    photos = this.responseText.match(/http:\/\/[a-z0-9_\/\.]+_m.jpg/g).sort().unique()
+      .map(function(u){ return u.replace(/m\.jpg$/, "z.jpg") })
+      .map(Image.load);
+  }, false);
+  xhr.send(null);
+
+  var video = document.createElement('video');
+  video.width = 640;
+  video.height = 480;
+  video.loop = true;
+  video.volume = 0;
+  video.autoplay = true;
+  video.style.display = 'none';
+  video.controls = true;
+  video.src = "swap_loop.ogg";
+
+  window.onload = function() {
+    byId('loading').style.display = 'none';
+    document.body.appendChild(video);
+
+    var canvas = document.createElement('canvas');
+    canvas.width = 320;
+    canvas.height = 240;
+    canvas.style.display = 'block';
+
+    var videoCanvas = document.createElement('canvas');
+    videoCanvas.width = video.width;
+    videoCanvas.height = video.height;
+
+    var raster = new NyARRgbRaster_Canvas2D(canvas);
+    var param = new FLARParam(320,240);
+
+    var resultMat = new NyARTransMatResult();
+
+    var detector = new FLARMultiIdMarkerDetector(param, 80);
+    detector.setContinueMode(true);
+
+    var ctx = canvas.getContext('2d');
+    ctx.font = "24px URW Gothic L, Arial, Sans-serif";
+
+    var glCanvas = document.createElement('canvas');
+    glCanvas.width = 960;
+    glCanvas.height = 720;
+    var s = glCanvas.style;
+    document.body.appendChild(glCanvas);
+    display = new Magi.Scene(glCanvas);
+    display.drawOnlyWhenChanged = true;
+    param.copyCameraMatrix(display.camera.perspectiveMatrix, 10, 10000);
+    display.camera.useProjectionMatrix = true;
+    var videoTex = new Magi.FlipFilterQuad();
+    videoTex.material.textures.Texture0 = new Magi.Texture();
+    videoTex.material.textures.Texture0.image = videoCanvas;
+    videoTex.material.textures.Texture0.generateMipmaps = false;
+    display.scene.appendChild(videoTex);
+
+    var times = [];
+    var pastResults = {};
+    var lastTime = 0;
+    var cubes = {};
+    var images = [];
+
+    window.updateImage = function() {
+      display.changed = true;
+    }
+    window.addEventListener('keydown', function(ev) {
+      if (Key.match(ev, Key.LEFT)) {
+        images.forEach(function(e){ e.setImage(photos.rotate(true)); });
+      } else if (Key.match(ev, Key.RIGHT)) {
+        images.forEach(function(e){ e.setImage(photos.rotate(false)); });
+      }
+    }, false);
+
+    setInterval(function(){
+      if (video.ended) video.play();
+      if (video.paused) return;
+      if (window.paused) return;
+      if (video.currentTime == video.duration) {
+        video.currentTime = 0;
+      }
+      if (video.currentTime == lastTime) return;
+      lastTime = video.currentTime;
+      videoCanvas.getContext('2d').drawImage(video,0,0);
+      ctx.drawImage(videoCanvas, 0,0,320,240);
+      var dt = new Date().getTime();
+
+      videoTex.material.textures.Texture0.changed = true;
+
+      canvas.changed = true;
+      display.changed = true;
+
+      var t = new Date();
+      var detected = detector.detectMarkerLite(raster, threshold);
+      for (var idx = 0; idx<detected; idx++) {
+        var id = detector.getIdMarkerData(idx);
+        //read data from i_code via Marsial--Marshal経由で読み出す
+        var currId;
+        if (id.packetLength > 4) {
+          currId = -1;
+        }else{
+          currId=0;
+          //最大4バイト繋げて１個のint値に変換
+          for (var i = 0; i < id.packetLength; i++ ) {
+            currId = (currId << 8) | id.getPacketData(i);
+            //console.log("id[", i, "]=", id.getPacketData(i));
+          }
+        }
+        //console.log("[add] : ID = " + currId);
+        if (!pastResults[currId]) {
+          pastResults[currId] = {};
+        }
+        detector.getTransformMatrix(idx, resultMat);
+        pastResults[currId].age = 0;
+        pastResults[currId].transform = Object.asCopy(resultMat);
+      }
+      for (var i in pastResults) {
+        var r = pastResults[i];
+        if (r.age > 1) {
+          delete pastResults[i];
+          cubes[i].image.setImage(photos.rotate());
+        }
+        r.age++;
+      }
+      for (var i in cubes) cubes[i].display = false;
+      for (var i in pastResults) {
+        if (!cubes[i]) {
+          var pivot = new Magi.Node();
+          pivot.transform = mat4.identity();
+          pivot.setScale(80);
+          var image = new Magi.Image();
+          image
+            .setAlign(image.centerAlign, image.centerAlign)
+            .setPosition(0, 0, 0)
+            .setAxis(0,0,1)
+            .setAngle(Math.PI)
+            .setSize(1.5);
+          image.setImage = function(src) {
+            var img = E.canvas(640,640);
+            Magi.Image.setImage.call(this, img);
+            this.texture.generateMipmaps = false;
+            var self = this;
+            src.onload = function(){
+              var w = this.width, h = this.height;
+              var f = Math.min(640/w, 640/h);
+              w = (w*f);
+              h = (h*f);
+              img.getContext('2d').drawImage(this, (640-w)/2,(640-h)/2,w,h);
+              self.texture.changed = true;
+              self.setSize(1.1*Math.max(w/h, h/w));
+            };
+            if (Object.isImageLoaded(src)) {
+              src.onload();
+            }
+          };
+          image.setImage(photos.rotate());
+          images.push(image);
+          pivot.image = image;
+          pivot.appendChild(image);
+          /*var txt = new Magi.Text(i);
+          txt.setColor('#f0f0d8');
+          txt.setFont('URW Gothic L, Arial, Sans-serif');
+          txt.setFontSize(32);
+          txt.setAlign(txt.leftAlign, txt.bottomAlign)
+            .setPosition(-0.45, -0.48, -0.51)
+            .setScale(1/190);*/
+          display.scene.appendChild(pivot);
+          cubes[i] = pivot;
+        }
+        cubes[i].display = true;
+        var mat = pastResults[i].transform;
+        var cm = cubes[i].transform;
+        cm[0] = mat.m00;
+        cm[1] = -mat.m10;
+        cm[2] = mat.m20;
+        cm[3] = 0;
+        cm[4] = mat.m01;
+        cm[5] = -mat.m11;
+        cm[6] = mat.m21;
+        cm[7] = 0;
+        cm[8] = -mat.m02;
+        cm[9] = mat.m12;
+        cm[10] = -mat.m22;
+        cm[11] = 0;
+        cm[12] = mat.m03;
+        cm[13] = -mat.m13;
+        cm[14] = mat.m23;
+        cm[15] = 1;
+      }
+    }, 15);
+  }
+</script>
+<style>
+  html {
+    background: black;
+    color: white;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+  #loading {
+    font-size: 80px;
+    font-weight: bold;
+    font-family: Times;
+  }
+</style>
+
+</head>
+<body>
+<div id="loading">Hang on, I'm loading stuff...</div>
+</body>
+</html>

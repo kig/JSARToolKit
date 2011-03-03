@@ -1,0 +1,39 @@
+JSARToolkit
+--------------------------------------------------------------------------------
+
+This is a JavaScript port of FLARToolKit, operating on canvas images and
+video element contents. And hopefully one day on device elements with webcam
+input.
+
+The license is GPL 3 as was the original library.
+
+All the hard work was done by the ARToolKit/NyARToolKit/FLARToolKit people,
+a huge thank you to them. This port was quite mechanical, though it has some
+major JS optimizations and a tracking robustness hack or two. And some 
+uninformed bogus hacks in FLARParam to sort-of make it work on 16:9 video.
+
+See demos/AR_simple_webgl.html for an example of integrating JSARToolKit
+output with a WebGL program.
+
+I've only tested the ID markers and square detection paths, so you may
+encounter problems working with custom markers. In which case, filing a bug 
+report on GitHub would be very much appreciated.
+
+
+- Ilmari Heikkinen
+
+--------------------------------------------------------------------------------
+This work is based on the original ARToolKit developed by
+  Hirokazu Kato
+  Mark Billinghurst
+  HITLab, University of Washington, Seattle
+http://www.hitl.washington.edu/artoolkit/
+
+And the NyARToolkitAS3 ARToolKit class library.
+  Copyright (C)2010 Ryo Iizuka
+
+The FLARToolKit is ActionScript 3.0 version ARToolkit class library.
+   Copyright (C)2008 Saqoosha
+
+JSARToolkit is a JavaScript port of NyARToolkitAS3 and FLARToolKit.
+  Copyright (C)2011 Ilmari Heikkinen

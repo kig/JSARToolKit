@@ -1,0 +1,218 @@
+<html><head>
+<script src="../../src/NyAs3Utils.js"></script>
+<script src="../../src/FLARArrayUtil.js"></script>
+<script src="../../src/FLARException.js"></script>
+<script src="../../src/FLARMat.js"></script>
+<script src="../../src/FLARRgbPixelReader.js"></script>
+<script src="../../src/NyARHistogramAnalyzer.js"></script>
+<script src="../../src/NyARPca2d.js"></script>
+<script src="../../src/NyARRasterReader.js"></script>
+<script src="../../src/NyARTypes.js"></script>
+<script src="../../src/FLARRasterFilter.js"></script>
+<script src="../../src/FLARTypes.js"></script>
+<script src="../../src/NyARLabel.js"></script>
+<script src="../../src/FLARLabeling.js"></script>
+<script src="../../src/NyARParam.js"></script>
+<script src="../../src/FLARParam.js"></script>
+<script src="../../src/NyARRaster.js"></script>
+<script src="../../src/FLARRaster.js"></script>
+<script src="../../src/NyARCode.js"></script>
+<script src="../../src/FLARCode.js"></script>
+<script src="../../src/NyARMatch.js"></script>
+<script src="../../src/NyARRasterAnalyzer.js"></script>
+<script src="../../src/FLARRasterAnalyzer.js"></script>
+<script src="../../src/NyARRasterFilter.js"></script>
+<script src="../../src/NyARSquareDetect.js"></script>
+<script src="../../src/FLARSquareDetect.js"></script>
+<script src="../../src/NyARTransMat.js"></script>
+<script src="../../src/FLARTransMat.js"></script>
+<script src="../../src/NyARUtils.js"></script>
+<script src="../../src/NyARIdMarker.js"></script>
+<script src="../../src/NyARPickup.js"></script>
+<script src="../../src/FLARProcessor.js"></script>
+<script src="../../src/NyARDetector.js"></script>
+<script src="../../src/FLARDetector.js"></script>
+<script src="../../src/FLARIdMarkerDetector.js"></script>
+<script src="../../src/NyARSingleMarkerProcesser.js"></script>
+<script src="../../src/NyUtils.js"></script>
+<script src="../magi.js"></script>
+<script>
+  window.onload = function() {
+    var video = new Image();
+    video.onload = function(){
+    var w = Magi.Bin.load('walas.binm');
+    w.flatNormals = false;
+    w.onload = function() {
+      var canvas = document.createElement('canvas');
+      canvas.width = 640;
+      canvas.height = 480;
+      canvas.style.display = 'none';
+      document.body.appendChild(canvas);
+
+      var raster = new NyARRgbRaster_Canvas2D(canvas);
+      var param = new FLARParam(640,480);
+
+      var resultMat = new NyARTransMatResult();
+
+      var detector = new FLARMultiIdMarkerDetector(param, 80);
+      detector.setContinueMode(true);
+
+      var glCanvas = document.createElement('canvas');
+      glCanvas.width = 640;
+      glCanvas.height = 480;
+      document.body.appendChild(glCanvas);
+      var display = new Magi.Scene(glCanvas);
+      param.copyCameraMatrix(display.camera.perspectiveMatrix, 100, 10000);
+      display.camera.useProjectionMatrix = true;
+      var videoTex = new Magi.FlipFilterQuad();
+      videoTex.material.textures.Texture0 = new Magi.Texture();
+      videoTex.material.textures.Texture0.image = video;
+      videoTex.material.textures.Texture0.generateMipmaps = false;
+      display.scene.appendChild(videoTex);
+
+      var ctx = canvas.getContext('2d');
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0,0,320,240);
+      ctx.font = "24px URW Gothic L, Arial, Sans-serif";
+
+      var times = [];
+      var pastResults = {};
+      var lastTime = 0;
+      var cubes = {};
+
+      ctx.drawImage(video, 0,0,640,480);
+      var dt = new Date().getTime();
+
+      canvas.changed = true;
+
+      var t = new Date();
+      var detected = detector.detectMarkerLite(raster, 160);
+      //detector._bin_raster.getBuffer().drawOnCanvas(canvas);
+      for (var idx = 0; idx<detected; idx++) {
+        var id = detector.getIdMarkerData(idx);
+        //read data from i_code via Marsial--Marshal経由で読み出す
+        var currId;
+        if (id.packetLength > 4) {
+          currId = -1;
+        }else{
+          currId=0;
+          //最大4バイト繋げて１個のint値に変換
+          for (var i = 0; i < id.packetLength; i++ ) {
+            currId = (currId << 8) | id.getPacketData(i);
+            //console.log("id[", i, "]=", id.getPacketData(i));
+          }
+        }
+        //console.log("[add] : ID = " + currId);
+        if (!pastResults[currId]) {
+          pastResults[currId] = {};
+        }
+        detector.getTransformMatrix(idx, resultMat);
+        pastResults[currId].age = 0;
+        pastResults[currId].transform = Object.asCopy(resultMat);
+        if (idx == 0) console.log(new Date()-t);
+      }
+      for (var i in pastResults) {
+        var r = pastResults[i];
+        if (r.age > 1) delete pastResults[i];
+        r.age++;
+      }
+      for (var i in cubes) cubes[i].display = false;
+      for (var i in pastResults) {
+        if (!cubes[i]) {
+          var pivot = new Magi.Node();
+          pivot.transform = mat4.identity();
+          pivot.setScale(80);
+          var cube;
+          if (i == 64) {
+            var n = new Magi.Node();
+            walas = n;
+            var sc = 1.5 / (w.boundingBox.diameter);
+            n.setScale(sc);
+            n.model = w.makeVBO();
+            n.setZ(-0.85);
+            n.rotation.axis = [1,0,0];
+            n.rotation.angle = Math.PI;
+            n.material = Magi.DefaultMaterial.get();
+            n.material.floats.LightDiffuse = [1,1,1,1];
+            n.material.floats.MaterialShininess = 6.0;
+            n.material.floats.MaterialDiffuse = [1,1,1,1];
+            cube = new Magi.Node();
+            cube.appendChild(n);
+          } else {
+            cube = new Magi.Cube();
+            cube.setZ(-0.125);
+            cube.scaling[2] = 0.25;
+          }
+          cube.setAxis(0,0,1);
+          cube.addFrameListener(function(t,dt) {
+            var s = Math.sin(t/500);
+//             var sca = 0.5*s + 1.0;
+//             this.setScale(sca,sca,sca);
+            this.setZ(-Math.abs(s)+0.6);
+            this.setAngle(t/500);
+          });
+          pivot.appendChild(cube);
+          var txt = new Magi.Text(i.toString());
+          txt.setColor('black');
+          txt.setFontSize(48);
+          txt.setAlign(txt.centerAlign, txt.bottomAlign)
+              .setZ(-0.6)
+              .setY(-0.34)
+              .setScale(1/80);
+          for (var k=0; k<10; k++) {
+            var ring = new Magi.Ring(0.05, Math.PI*1.95, 64, 1);
+            ring.setScale(0.7+Math.random()*0.2)
+            ring.speed = 0.5+Math.random();
+            ring.direction = Math.random() > 0.5 ? 1 : -1;
+            ring.addFrameListener(function(t,dt) {
+              this.setY(Math.sin(this.speed*t/400)*0.3+0.7);
+              this.setAngle(this.speed*this.direction*t/300);
+            });
+            ring.blendFuncSrc = ring.blendFuncDst = 'ONE';
+            ring.blend = true;
+            ring.transparent = true;
+            var ringPivot = new Magi.Node();
+            ringPivot.appendChild(ring);
+            ringPivot.setAxis(1,0,0);
+            ringPivot.setAngle(-Math.PI/2);
+            pivot.appendChild(ringPivot);
+          }
+//           ring.material = cube.material;
+          cube.appendChild(txt);
+          pivot.cube = cube;
+          pivot.txt = txt;
+          display.scene.appendChild(pivot);
+          cubes[i] = pivot;
+        }
+        cubes[i].display = true;
+        cubes[i].txt.setText(i.toString());
+        var mat = pastResults[i].transform;
+        var cm = cubes[i].transform;
+        cm[0] = mat.m00;
+        cm[1] = -mat.m10;
+        cm[2] = mat.m20;
+        cm[3] = 0;
+        cm[4] = mat.m01;
+        cm[5] = -mat.m11;
+        cm[6] = mat.m21;
+        cm[7] = 0;
+        cm[8] = -mat.m02;
+        cm[9] = mat.m12;
+        cm[10] = -mat.m22;
+        cm[11] = 0;
+        cm[12] = mat.m03;
+        cm[13] = -mat.m13;
+        cm[14] = mat.m23;
+        cm[15] = 1;
+        //frequency = 1000-mat.m23;
+      }
+    }
+    }
+    video.src = "../images/kuva.jpg";
+  }
+</script>
+
+</head>
+<body>
+</body>
+</html>
