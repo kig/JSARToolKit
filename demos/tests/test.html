@@ -36,6 +36,7 @@
 <script src="../../src/NyARSingleMarkerProcesser.js"></script>
 <script src="../../src/NyUtils.js"></script>
 <script>
+try {
   var i_width = 10, i_height = 10, i_point_per_pix = 4, i_edge_percentage = 10
   var i_resolution = 10, i_size = {w:100,h:100}, i_distfactor_ref = 10
   var i_code = [new NyARCode(10,10)], i_marker_width = 10, i_number_of_code = 1, i_num_of_code = 1, i_input_raster_type = NyARBufferType.INT1D_X8R8G8B8_32
@@ -121,7 +122,9 @@
   new SingleARMarkerProcesser()
   new SingleNyIdMarkerProcesser()
   new TransformedBitmapPickup(i_ref_cparam,i_width,i_height,i_resolution)
-
+} catch(e) {
+  if (window.console) window.console.log(e);
+}
 
   window.onload = function() {
     DEBUG = false;
@@ -152,7 +155,7 @@
       var ctx = canvas.getContext('2d');
       ctx.fillStyle = 'white';
       ctx.fillRect(0,0,320,240);
-      ctx.font = "44px Sans-serif";
+      ctx.font = "36px sans-serif";
       var times = [];
       setInterval(function() {
         if (window.paused) return;
@@ -194,9 +197,9 @@
           if (idx == 0) times.push(new Date()-t);
           ctx.save();
             ctx.translate(160, 120);
-            var sc = 890/resultMat.m23;
+            var sc = 940/resultMat.m23;
             ctx.scale(sc, sc);
-            ctx.transform(resultMat.m00, resultMat.m01, -resultMat.m10, -resultMat.m11, resultMat.m03, resultMat.m13);
+            ctx.transform(resultMat.m00, resultMat.m01, -resultMat.m10, -resultMat.m11, resultMat.m03*3/4, resultMat.m13*3/4);
             ctx.fillStyle = "red";
             ctx.fillRect(-26,-26,53,53);
             ctx.fillStyle = "white";
