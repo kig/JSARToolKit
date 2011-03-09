@@ -1402,7 +1402,7 @@ INyARDoubleMatrix = Klass({
     * @param o_value
     */
   setValue : function(o_value){}, // double[]
-  
+
   /**
     * 行列の内容を配列に返す。
     * 遅いので余り使わないでね。
@@ -1539,19 +1539,19 @@ NyARDoubleMatrix33 = Klass( INyARDoubleMatrix,
     a11=i_src.m00;a12=i_src.m01;a13=i_src.m02;
     a21=i_src.m10;a22=i_src.m11;a23=i_src.m12;
     a31=i_src.m20;a32=i_src.m21;a33=i_src.m22;
-    
+
     b11=a22*a33-a23*a32;
     b12=a32*a13-a33*a12;
     b13=a12*a23-a13*a22;
-    
+
     b21=a23*a31-a21*a33;
     b22=a33*a11-a31*a13;
     b23=a13*a21-a11*a23;
-    
+
     b31=a21*a32-a22*a31;
     b32=a31*a12-a32*a11;
     b33=a11*a22-a12*a21;
-        
+
     var det_1=a11*b11+a21*b12+a31*b13;
     if(det_1==0){
       return false;
@@ -1561,15 +1561,15 @@ NyARDoubleMatrix33 = Klass( INyARDoubleMatrix,
     this.m00=b11*det_1;
     this.m01=b12*det_1;
     this.m02=b13*det_1;
-    
+
     this.m10=b21*det_1;
     this.m11=b22*det_1;
     this.m12=b23*det_1;
-    
+
     this.m20=b31*det_1;
     this.m21=b32*det_1;
     this.m22=b33*det_1;
-    
+
     return true;
   }
   /**
@@ -1595,7 +1595,7 @@ NyARDoubleMatrix33 = Klass( INyARDoubleMatrix,
   }
   ,setZXYAngle_NyARDoublePoint3d : function(i_angle)
   {
-    setZXYAngle_Number(i_angle.x,i_angle.y,i_angle.z);
+    this.setZXYAngle_Number(i_angle.x,i_angle.y,i_angle.z);
     return;
   }
   ,setZXYAngle_Number : function(i_x,i_y,i_z)
@@ -1627,7 +1627,7 @@ NyARDoubleMatrix33 = Klass( INyARDoubleMatrix,
     transformVertex_double(i_position.x,i_position.y,i_position.z,o_out);
     return;
   }
-  
+
   ,transformVertex_double : function(i_x,i_y,i_z,o_out)
   {
     o_out.x=this.m00*i_x+this.m01*i_y+this.m02*i_z;
@@ -1792,19 +1792,19 @@ NyARDoubleMatrix44 = Klass( INyARDoubleMatrix,
     a21=i_src.m10;a22=i_src.m11;a23=i_src.m12;a24=i_src.m13;
     a31=i_src.m20;a32=i_src.m21;a33=i_src.m22;a34=i_src.m23;
     a41=i_src.m30;a42=i_src.m31;a43=i_src.m32;a44=i_src.m33;
-    
+
     t1=a33*a44-a34*a43;
     t2=a34*a42-a32*a44;
     t3=a32*a43-a33*a42;
     t4=a34*a41-a31*a44;
     t5=a31*a43-a33*a41;
     t6=a31*a42-a32*a41;
-    
+
     b11=a22*t1+a23*t2+a24*t3;
     b21=-(a23*t4+a24*t5+a21*t1);
     b31=a24*t6-a21*t2+a22*t4;
     b41=-(a21*t3-a22*t5+a23*t6);
-    
+
     t1=a43*a14-a44*a13;
     t2=a44*a12-a42*a14;
     t3=a42*a13-a43*a12;
@@ -1816,7 +1816,7 @@ NyARDoubleMatrix44 = Klass( INyARDoubleMatrix,
     b22=a33*t4+a34*t5+a31*t1;
     b32=-(a34*t6-a31*t2+a32*t4);
     b42=a31*t3-a32*t5+a33*t6;
-    
+
     t1=a13*a24-a14*a23;
     t2=a14*a22-a12*a24;
     t3=a12*a23-a13*a22;
@@ -1840,7 +1840,7 @@ NyARDoubleMatrix44 = Klass( INyARDoubleMatrix,
     b24=a13*t4+a14*t5+a11*t1;
     b34=-(a14*t6-a11*t2+a12*t4);
     b44=a11*t3-a12*t5+a13*t6;
-    
+
     var det_1=(a11*b11+a21*b12+a31*b13+a41*b14);
     if(det_1==0){
       return false;
@@ -1851,22 +1851,22 @@ NyARDoubleMatrix44 = Klass( INyARDoubleMatrix,
     this.m01=b12*det_1;
     this.m02=b13*det_1;
     this.m03=b14*det_1;
-    
+
     this.m10=b21*det_1;
     this.m11=b22*det_1;
     this.m12=b23*det_1;
     this.m13=b24*det_1;
-    
+
     this.m20=b31*det_1;
     this.m21=b32*det_1;
     this.m22=b33*det_1;
     this.m23=b34*det_1;
-    
+
     this.m30=b41*det_1;
     this.m31=b42*det_1;
     this.m32=b43*det_1;
     this.m33=b44*det_1;
-    
+
     return true;
   }
 })
@@ -1888,7 +1888,7 @@ NyARDoubleMatrix44 = Klass( INyARDoubleMatrix,
 NyARObjectStack = Klass(
 {
   _items : null,
-  
+
   _length : 0,
 
   /**
@@ -1907,7 +1907,7 @@ NyARObjectStack = Klass(
     this._length = 0;
     return;
   }
-  
+
   /**
     * どのような配列(Vector)を格納するかを決める場所。
     * この関数を上書きしてください。
@@ -1917,7 +1917,7 @@ NyARObjectStack = Klass(
   {
     throw new NyARException();
   }
-  
+
   /**
     * 新しい領域を予約します。
     * @return
@@ -1935,7 +1935,7 @@ NyARObjectStack = Klass(
     this._length++;
     return ret;
   }
-  
+
   /**
     * スタックを初期化します。
     * @param i_reserv_length
@@ -1950,7 +1950,7 @@ NyARObjectStack = Klass(
     }
     this._length=i_reserv_length;
   }
-  
+
   /**
     * 見かけ上の要素数を1減らして、そのオブジェクトを返します。
     * 返却したオブジェクトの内容は、次回のpushまで有効です。
@@ -1962,7 +1962,7 @@ NyARObjectStack = Klass(
     this._length--;
     return this._items[this._length];
   }
-  
+
   /**
     * 見かけ上の要素数をi_count個減らします。
     * @param i_count
@@ -1974,7 +1974,7 @@ NyARObjectStack = Klass(
     this._length-=i_count;
     return;
   }
-  
+
   /**
     * 配列を返します。
     *
@@ -1984,12 +1984,12 @@ NyARObjectStack = Klass(
   {
     return this._items;
   }
-  
+
   ,getItem : function(i_index)
   {
     return this._items[i_index];
   }
-  
+
   /**
     * 配列の見かけ上の要素数を返却します。
     * @return
@@ -1998,7 +1998,7 @@ NyARObjectStack = Klass(
   {
     return this._length;
   }
-  
+
   /**
     * 見かけ上の要素数をリセットします。
     */
@@ -2026,7 +2026,7 @@ NyARIntPointStack = Klass( NyARObjectStack,
     }
     return ret;
   }
-  
+
 })
 
 
@@ -2040,9 +2040,9 @@ NyARIntPointStack = Klass( NyARObjectStack,
 NyARIntRectStack = Klass( //NyARObjectStack,
 {
   _items : null,
-  
+
   _length : null,
-  
+
   initialize : function(i_length)
   {
     //領域確保
@@ -2076,7 +2076,7 @@ NyARIntRectStack = Klass( //NyARObjectStack,
     this._length++;
     return ret;
   }
-  
+
   /**
     * スタックを初期化します。
     * @param i_reserv_length
@@ -2091,7 +2091,7 @@ NyARIntRectStack = Klass( //NyARObjectStack,
     }
     this._length=i_reserv_length;
   }
-  
+
   /**
     * 見かけ上の要素数を1減らして、そのオブジェクトを返します。
     * 返却したオブジェクトの内容は、次回のpushまで有効です。
@@ -2103,7 +2103,7 @@ NyARIntRectStack = Klass( //NyARObjectStack,
     this._length--;
     return this._items[this._length];
   }
-  
+
   /**
     * 見かけ上の要素数をi_count個減らします。
     * @param i_count
@@ -2115,7 +2115,7 @@ NyARIntRectStack = Klass( //NyARObjectStack,
     this._length-=i_count;
     return;
   }
-  
+
   /**
     * 配列を返します。
     *
@@ -2125,12 +2125,12 @@ NyARIntRectStack = Klass( //NyARObjectStack,
   {
     return this._items;
   }
-  
+
   ,getItem : function(i_index)
   {
     return this._items[i_index];
   }
-  
+
   /**
     * 配列の見かけ上の要素数を返却します。
     * @return
@@ -2139,7 +2139,7 @@ NyARIntRectStack = Klass( //NyARObjectStack,
   {
     return this._length;
   }
-  
+
   /**
     * 見かけ上の要素数をリセットします。
     */
@@ -2211,7 +2211,7 @@ NyARBufferType = Klass(
       WORD1D_R5G6B5_16LE : T_SHORT1D|0x0201,
       WORD1D_R5G6B5_16BE : T_SHORT1D|0x0202,
 
-      
+
       /**
         * int[][]で特に値範囲を定めない
         */
@@ -2239,8 +2239,8 @@ NyARBufferType = Klass(
         * これは、階調1bitのINT1D_GRAY_1と同じです。
         */
       INT1D_BIN_8  : T_INT1D|0x0002,
-      
-      
+
+
       /**
         * int[]で、XRGB32の32ビットで画素が格納されている。
         */
@@ -2250,7 +2250,7 @@ NyARBufferType = Klass(
         * H(0-359),S(0-255),V(0-255)
         */
       INT1D_X7H9S8V8_32:T_INT1D|0x0103,
-      
+
 
       /**
         * プラットフォーム固有オブジェクト
@@ -2259,12 +2259,12 @@ NyARBufferType = Klass(
       OBJECT_CS  : T_OBJECT|0x0200,
       OBJECT_AS3 : T_OBJECT|0x0300,
       OBJECT_JS : T_OBJECT|0x0400,
-      
+
       /**
         * JavaのBufferedImageを格納するラスタ
         */
       OBJECT_Java_BufferedImage: T_OBJECT|0x0100|0x01,
-      
+
       OBJECT_AS3_BitmapData : T_OBJECT|0x0300|0x01,
       /**
         * JavaScriptのCanvasを格納するラスタ
@@ -2411,9 +2411,9 @@ NyARHistogram = Klass(
     * 有効なサンプルの総数 data[i]
     */
   total_of_data : 0,
-  
-  
-  
+
+
+
   initialize : function(i_length)
   {
     this.data=new FloatVector(i_length);
@@ -2500,7 +2500,7 @@ NyARHistogram = Klass(
     }
     return toInt(sum/this.total_of_data);
   }
-  
+
 })
 
 
@@ -3045,7 +3045,7 @@ NyARLabelOverlapChecker = ASKlass('NyARLabelOverlapChecker',
   ,setMaxLabels : function(i_max_label)
   {
     if (i_max_label > this._labels.length) {
-      this._labels = createArray(i_max_label);
+      this._labels = this.createArray(i_max_label);
     }
     this._length = 0;
   }
@@ -5172,7 +5172,7 @@ NyARCodeFileReader = ASKlass('NyARCodeFileReader',
     var buf=(tmp_raster.getBuffer());
     //GBRAで一度読みだす。
     for (var h = 0; h < 4; h++){
-      readBlock(token,width,height,buf);
+      this.readBlock(token,width,height,buf);
       //ARCodeにセット(カラー)
       o_code.getColorData(h).setRaster(tmp_raster);
       o_code.getBlackWhiteData(h).setRaster(tmp_raster);
@@ -5618,7 +5618,7 @@ FLARRasterAnalyzer_Histogram = ASKlass('FLARRasterAnalyzer_Histogram', NyARRaste
       h[i] = 0;
     }
     o_histgram.total_of_data=size.w*size.h/this._vertical_skip;
-    return createHistgram_AS3_BitmapData(i_input, size,h,this._vertical_skip);
+    return this.createHistgram_AS3_BitmapData(i_input, size,h,this._vertical_skip);
   }
   ,createHistgram_AS3_BitmapData : function(i_reader,i_size,o_histgram,i_skip)
   {
@@ -10645,7 +10645,7 @@ FLSingleARMarkerProcesser = ASKlass('FLSingleARMarkerProcesser',
   {
     if (this._current_arcode_index != -1) {
       // 強制リセット
-      reset(true);
+      this.reset(true);
     }
     //検出するマーカセット、情報、検出器を作り直す。(1ピクセル4ポイントサンプリング,マーカのパターン領域は50%)
     this._detectmarker_cb.setNyARCodeTable(i_ref_code_table,i_code_resolution);
@@ -13154,7 +13154,7 @@ SingleARMarkerProcesser = ASKlass('SingleARMarkerProcesser',
   {
     if (this._current_arcode_index != -1) {
       // 強制リセット
-      reset(true);
+      this.reset(true);
     }
     //検出するマーカセット、情報、検出器を作り直す。(1ピクセル4ポイントサンプリング,マーカのパターン領域は50%)
     this._detectmarker_cb.setNyARCodeTable(i_ref_code_table,i_code_resolution);

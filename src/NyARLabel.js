@@ -240,7 +240,7 @@ NyARLabelOverlapChecker = ASKlass('NyARLabelOverlapChecker',
   ,setMaxLabels : function(i_max_label)
   {
     if (i_max_label > this._labels.length) {
-      this._labels = createArray(i_max_label);
+      this._labels = this.createArray(i_max_label);
     }
     this._length = 0;
   }

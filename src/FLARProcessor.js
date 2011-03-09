@@ -91,7 +91,7 @@ FLSingleARMarkerProcesser = ASKlass('FLSingleARMarkerProcesser',
   {
     if (this._current_arcode_index != -1) {
       // 強制リセット
-      reset(true);
+      this.reset(true);
     }
     //検出するマーカセット、情報、検出器を作り直す。(1ピクセル4ポイントサンプリング,マーカのパターン領域は50%)
     this._detectmarker_cb.setNyARCodeTable(i_ref_code_table,i_code_resolution);

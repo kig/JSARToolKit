@@ -281,7 +281,7 @@ NyARCodeFileReader = ASKlass('NyARCodeFileReader',
     var buf=(tmp_raster.getBuffer());
     //GBRAで一度読みだす。
     for (var h = 0; h < 4; h++){
-      readBlock(token,width,height,buf);
+      this.readBlock(token,width,height,buf);
       //ARCodeにセット(カラー)
       o_code.getColorData(h).setRaster(tmp_raster);
       o_code.getBlackWhiteData(h).setRaster(tmp_raster);

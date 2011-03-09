@@ -60,7 +60,7 @@ FLARRasterAnalyzer_Histogram = ASKlass('FLARRasterAnalyzer_Histogram', NyARRaste
       h[i] = 0;
     }
     o_histgram.total_of_data=size.w*size.h/this._vertical_skip;
-    return createHistgram_AS3_BitmapData(i_input, size,h,this._vertical_skip);
+    return this.createHistgram_AS3_BitmapData(i_input, size,h,this._vertical_skip);
   }
   ,createHistgram_AS3_BitmapData : function(i_reader,i_size,o_histgram,i_skip)
   {
