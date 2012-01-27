@@ -332,7 +332,7 @@ DnDUpload = Klass({
 });
 </script>
 <script>
-  threshold = 50;
+  threshold = 128;
   DEBUG = false;
   var xhr = new XMLHttpRequest;
   xhr.open("GET", "photos2.xml", false);
@@ -347,14 +347,21 @@ DnDUpload = Klass({
   xhr.send(null);
 
   var video = document.createElement('video');
-  video.width = 640;
-  video.height = 480;
+  video.width = 320;
+  video.height = 240;
   video.loop = true;
   video.volume = 0;
   video.autoplay = true;
   video.style.display = 'none';
   video.controls = true;
-  video.src = "swap_loop.ogg";
+  navigator.webkitGetUserMedia('video',
+    function(stream) {
+      var url = webkitURL.createObjectURL(stream);
+      video.src = url;
+    },
+    function(error) { alert('you got no WebRTC webcam'); }
+  );
+  //video.src = "swap_loop.ogg";
 
   window.onload = function() {
     byId('loading').style.display = 'none';
