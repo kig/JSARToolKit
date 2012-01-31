@@ -136,7 +136,7 @@ NyARRgbPixelReader_Canvas2D = ASKlass("NyARRgbPixelReader_Canvas2D", INyARRgbPix
   {
     this._ref_canvas = i_canvas;
   },
-  
+
   getData : function() {
     if (this._ref_canvas.changed || !this._data) {
       var canvas = this._ref_canvas;
