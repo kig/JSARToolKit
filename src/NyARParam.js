@@ -461,15 +461,15 @@ NyARParam = ASKlass('NyARParam',
     var size = this.getScreenSize();
     var  width = size.w;
     var height = size.h;
-    
+
     this.getPerspectiveProjectionMatrix().decompMat(icpara_mat, trans_mat);
-    
+
     var icpara = icpara_mat.getArray();
     var trans = trans_mat.getArray();
     for (i = 0; i < 4; i++) {
       icpara[1][i] = (height - 1) * (icpara[2][i]) - icpara[1][i];
     }
-    
+
     for(i = 0; i < 3; i++) {
       for(j = 0; j < 3; j++) {
         p[i][j] = icpara[i][j] / icpara[2][2];
@@ -479,22 +479,22 @@ NyARParam = ASKlass('NyARParam',
     q[0][1] = (2.0 * p[0][1] / (width - 1));
     q[0][2] = -((2.0 * p[0][2] / (width - 1))  - 1.0);
     q[0][3] = 0.0;
-    
+
     q[1][0] = 0.0;
     q[1][1] = -(2.0 * p[1][1] / (height - 1));
     q[1][2] = -((2.0 * p[1][2] / (height - 1)) - 1.0);
     q[1][3] = 0.0;
-    
+
     q[2][0] = 0.0;
     q[2][1] = 0.0;
     q[2][2] = -(FAR_CLIP + NEAR_CLIP) / (NEAR_CLIP - FAR_CLIP);
     q[2][3] = 2.0 * FAR_CLIP * NEAR_CLIP / (NEAR_CLIP - FAR_CLIP);
-    
+
     q[3][0] = 0.0;
     q[3][1] = 0.0;
     q[3][2] = 1.0;
     q[3][3] = 0.0;
-    
+
     for (i = 0; i < 4; i++) { // Row.
       // First 3 columns of the current row.
       for (j = 0; j < 3; j++) { // Column.

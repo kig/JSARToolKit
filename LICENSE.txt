@@ -33,4 +33,4 @@ Copyright (C)2008-2010  Saqoosha, Ryo Iizuka
 
 あなたはこのプログラムと共に、GNU 一般公衆利用許諾書のコピーを一部受け取って
 いるはずです。もし受け取っていなければ、<http://www.gnu.org/licenses/> を
-ご覧ください。 
+ご覧ください。
