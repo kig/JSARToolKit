@@ -222,7 +222,7 @@ NyARTransMat = ASKlass('NyARTransMat',INyARTransMat,
     o_result_conv.error=min_err;
     return;
   },
-  
+
   optimize : function(io_rotmat,io_transvec,i_solver,i_offset_3d,i_2d_vertex,i_err_threshold)
   {
     //System.out.println("START");

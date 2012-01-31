@@ -353,7 +353,7 @@ NyIdMarkerPickup = ASKlass('NyIdMarkerPickup',
     return;
   }
   /**
-   * Initialize the marker pickup for a new frame. 
+   * Initialize the marker pickup for a new frame.
    * Clears out old values from perspective reader motion cache.
    */
   ,init : function()
