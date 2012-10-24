@@ -5,7 +5,7 @@ This is a JavaScript port of FLARToolKit, operating on canvas images and
 video element contents. And hopefully one day on device elements with webcam
 input.
 
-The license is GPL 3 as was the original library.
+The license is GPL 3 as was the original library. If you use it in your own scripts, you need to make the unminified unobfuscated source code of your script available and licensed under GPL 3.
 
 All the hard work was done by the ARToolKit/NyARToolKit/FLARToolKit people,
 a huge thank you to them. This port was quite mechanical, though it has some
