@@ -354,7 +354,7 @@ DnDUpload = Klass({
   video.autoplay = true;
   video.style.display = 'none';
   video.controls = true;
-  navigator.webkitGetUserMedia('video',
+  navigator.webkitGetUserMedia({'video': true},
     function(stream) {
       var url = webkitURL.createObjectURL(stream);
       video.src = url;
