@@ -347,7 +347,7 @@ FLARSingleMarkerDetector = ASKlass('FLARSingleMarkerDetector',
    */
   ,detectMarkerLite : function(i_raster,i_threshold)
   {
-    FLARRasterFilter_Threshold(this._tobin_filter).setThreshold(i_threshold);
+    this._tobin_filter.setThreshold(i_threshold);
     //サイズチェック
     if(!this._bin_raster.getSize().isEqualSize_NyARIntSize(i_raster.getSize())){
       throw new FLARException();
