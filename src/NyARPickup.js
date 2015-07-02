@@ -164,11 +164,11 @@ NyARColorPatt_Perspective = ASKlass('NyARColorPatt_Perspective', INyARColorPatt,
   }
   ,getBufferType : function()
   {
-    return BUFFER_FORMAT;
+    return this.BUFFER_FORMAT;
   }
   ,isEqualBufferType : function(i_type_value)
   {
-    return BUFFER_FORMAT==i_type_value;
+    return this.BUFFER_FORMAT==i_type_value;
   },
   __pickFromRaster_rgb_tmp : new IntVector(3),
   __pickFromRaster_cpara : new FloatVector(8),
