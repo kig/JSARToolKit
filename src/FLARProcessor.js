@@ -120,7 +120,7 @@ FLSingleARMarkerProcesser = ASKlass('FLSingleARMarkerProcesser',
     this._detectmarker_cb.init(i_raster,this._current_arcode_index);
     this._square_detect.detectMarkerCB(this._bin_raster,this._detectmarker_cb);
     // 認識状態を更新
-    var is_id_found=updateStatus(this._detectmarker_cb.square,this._detectmarker_cb.code_index);
+    var is_id_found=this.updateStatus(this._detectmarker_cb.square,this._detectmarker_cb.code_index);
     //閾値フィードバック(detectExistMarkerにもあるよ)
     if(!is_id_found){
       //マーカがなければ、探索+DualPTailで基準輝度検索
@@ -408,7 +408,7 @@ FLSingleNyIdMarkerProcesser = ASKlass('FLSingleNyIdMarkerProcesser',
     this._callback.init(i_raster,this._is_active?this._data_current:null);
     this._square_detect.detectMarkerCB(this._bin_raster, this._callback);
     // 認識状態を更新(マーカを発見したなら、current_dataを渡すかんじ)
-    var is_id_found=updateStatus(this._callback.square,this._callback.marker_data);
+    var is_id_found=this.updateStatus(this._callback.square,this._callback.marker_data);
     //閾値フィードバック(detectExistMarkerにもあるよ)
     if(is_id_found){
       //マーカがあれば、マーカの周辺閾値を反映
