@@ -37,11 +37,11 @@ ASVector = function(elements) {
   elements = elements || 0;
   if (elements.length) {
     this.length = elements.length;
-    for (var i=0; i<elements.length; i++)
+    for (let i=0; i<elements.length; i++)
       this[i] = elements[i];
   } else {
     this.length = elements;
-    for (var i=0; i<elements; i++)
+    for (let i=0; i<elements; i++)
       this[i] = 0;
   }
 }
@@ -66,27 +66,27 @@ if (typeof Float32Array == 'undefined') {
 toInt = Math.floor;
 
 Object.extend = function(dst, src) {
-  for (var i in src) {
+  for (let i in src) {
     try{ dst[i] = src[i]; } catch(e) {}
   }
   return dst;
 }
 
 toArray = function(obj) {
-  var a = new Array(obj.length);
-  for (var i=0; i<obj.length; i++)
+  let a = new Array(obj.length);
+  for (let i=0; i<obj.length; i++)
     a[i] = obj[i];
   return a;
 }
 
 Klass = (function() {
-  var c = function() {
+  let c = function() {
     if (this.initialize)
       this.initialize.apply(this, arguments);
   }
   c.ancestors = toArray(arguments);
   c.prototype = {};
-  for(var i = 0; i<arguments.length; i++) {
+  for(let i = 0; i<arguments.length; i++) {
     var a = arguments[i];
     if (a.prototype) {
       Object.extend(c.prototype, a.prototype);
@@ -102,26 +102,26 @@ Object.asCopy = function(obj) {
   if (typeof obj != 'object') {
     return obj;
   } else if (obj instanceof FloatVector) {
-    var v = new FloatVector(obj.length);
-    for (var i=0; i<v.length; i++)
+    let v = new FloatVector(obj.length);
+    for (let i=0; i<v.length; i++)
       v[i] = obj[i];
     return v;
   } else if (obj instanceof IntVector) {
-    var v = new IntVector(obj.length);
+    let v = new IntVector(obj.length);
     for (var i=0; i<v.length; i++)
       v[i] = obj[i];
     return v;
   } else if (obj instanceof UintVector) {
-    var v = new UintVector(obj.length);
+    let v = new UintVector(obj.length);
     for (var i=0; i<v.length; i++)
       v[i] = obj[i];
     return v;
   } else if (obj instanceof Array) {
     return obj.map(Object.asCopy);
   } else {
-    var newObj = {};
-    for (var i in obj) {
-      var v = obj[i];
+    let newObj = {};
+    for (let i in obj) {
+      let v = obj[i];
       if (typeof v == 'object') {
         v = Object.asCopy(v);
       }
@@ -132,17 +132,17 @@ Object.asCopy = function(obj) {
 }
 
 ASKlass = (function(name) {
-  var c = function() {
-    var cc = this.__copyObjects__;
-    for (var i=0; i<cc.length; i++)
+  let c = function() {
+    let cc = this.__copyObjects__;
+    for (let i=0; i<cc.length; i++)
       this[cc[i]] = Object.asCopy(this[cc[i]])
     if (this.initialize)
       this.initialize.apply(this, arguments);
   }
   c.ancestors = toArray(arguments).slice(1);
   c.prototype = {};
-  for(var i = 1; i<arguments.length; i++) {
-    var a = arguments[i];
+  for(let i = 1; i<arguments.length; i++) {
+    let a = arguments[i];
     if (a.prototype) {
       Object.extend(c.prototype, a.prototype);
     } else {
@@ -152,8 +152,8 @@ ASKlass = (function(name) {
   c.prototype.className = name;
   c.prototype.initialize = c.prototype[name];
   c.prototype.__copyObjects__ = [];
-  for (var i in c.prototype) {
-    var v = c.prototype[i];
+  for (let i in c.prototype) {
+    let v = c.prototype[i];
     if (i != '__copyObjects__') {
       if (typeof v == 'object') {
         c.prototype.__copyObjects__.push(i);
@@ -176,18 +176,18 @@ BitmapData = Klass({
     this.transparent = (transparent == null ? true : transparent);
     this.fill = (fill == null ? 0xffffffff : fill);
     this.data = new UintVector(i_width*i_height);
-    for (var i=0; i<this.data.length; i++) {
+    for (let i=0; i<this.data.length; i++) {
       this.data[i] = fill;
     }
     this.rect = new Rectangle(0,0,this.width, this.height);
   },
   fillRect : function(rect, value) {
-    var stride = this.width;
-    var y = Math.clamp(rect.y,0,this.height)*stride
+    let stride = this.width;
+    let y = Math.clamp(rect.y,0,this.height)*stride
       , y2 = Math.clamp(rect.y+rect.height,0,this.height)*stride
       , x = Math.clamp(rect.x,0,this.width)
       , x2 = Math.clamp(rect.x+rect.width,0,this.width);
-    var d = this.data;
+    let d = this.data;
     for (var y1=y;y1<y2; y1+=stride)
       for (var x1=x;x1<x2; x1++)
         d[y1+x1] = value;
@@ -207,20 +207,20 @@ BitmapData = Klass({
   getWidth : function () { return this.width; },
   getHeight : function () { return this.height; },
   copyPixels : function(source, rect, offset) {
-    var tstride = this.width;
-    var stride = source.width;
-    var d = source.data;
-    var td = this.data;
-    var ty = Math.clamp(offset.y,0,this.height)*tstride
+    let tstride = this.width;
+    let stride = source.width;
+    let d = source.data;
+    let td = this.data;
+    let ty = Math.clamp(offset.y,0,this.height)*tstride
       , ty2 = Math.clamp(offset.y+rect.height,0,this.height)*tstride
       , tx = Math.clamp(offset.x,0,this.width)
       , tx2 = Math.clamp(offset.x+rect.width,0,this.width);
-    var y = Math.clamp(rect.y,0,source.height)*stride
+    let y = Math.clamp(rect.y,0,source.height)*stride
       , y2 = Math.clamp(rect.y+rect.height,0,source.height)*stride
       , x = Math.clamp(rect.x,0,source.width)
       , x2 = Math.clamp(rect.x+rect.width,0,source.width);
-    for (var y1=y,ty1=ty; y1<y2 && ty1<ty2; y1+=stride,ty1+=tstride)
-      for (var x1=x,tx1=tx; x1<x2 && tx1<tx2; x1++,tx1++)
+    for (let y1=y,ty1=ty; y1<y2 && ty1<ty2; y1+=stride,ty1+=tstride)
+      for (let x1=x,tx1=tx; x1<x2 && tx1<tx2; x1++,tx1++)
         td[ty1+tx1] = d[y1+x1];
   },
   getColorBoundsRect : function(mask, color, findColor) {
@@ -231,13 +231,13 @@ BitmapData = Klass({
     }
   },
   getColorBoundsRect_true : function(mask, color) {
-    var minX=this.width, minY=this.height, maxX=0, maxY=0;
-    var w = this.width; h=this.height;
-    var d = this.data;
-    var m = 0, off = 0;
-    minYfor: for (var y=0; y<h; y++) {
+    let minX=this.width, minY=this.height, maxX=0, maxY=0;
+    let w = this.width; h=this.height;
+    let d = this.data;
+    let m = 0, off = 0;
+    minYfor: for (let y=0; y<h; y++) {
       off = y*w-1;
-      for (var x=0; x<w; x++) {
+      for (let x=0; x<w; x++) {
         m = (d[++off] & mask) - color;
         if (!m) {
           minX = maxX = x;
@@ -246,9 +246,9 @@ BitmapData = Klass({
         }
       }
     }
-    maxYfor: for (var y=h-1; y>minY; y--) {
+    maxYfor: for (let y=h-1; y>minY; y--) {
       off = y*w-1;
-      for (var x=0; x<w; x++) {
+      for (let x=0; x<w; x++) {
         m = (d[++off] & mask) - color;
         if (!m) {
           if (x < minX) minX = x;
@@ -258,9 +258,9 @@ BitmapData = Klass({
         }
       }
     }
-    for (var y=minY; y<=maxY; y++) {
+    for (let y=minY; y<=maxY; y++) {
       off = y*w-1;
-      for (var x=0; x<minX; x++) {
+      for (let x=0; x<minX; x++) {
         m = (d[++off] & mask) - color;
         if (!m) {
           minX = x;
@@ -268,7 +268,7 @@ BitmapData = Klass({
         }
       }
       off = y*w+w;
-      for (var x=w-1; x>maxX; x--) {
+      for (let x=w-1; x>maxX; x--) {
         m = (d[--off] & mask) - color;
         if (!m) {
           maxX = x;
@@ -279,12 +279,12 @@ BitmapData = Klass({
     return new Rectangle(minX, minY, Math.max(0,maxX-minX), Math.max(0,maxY-minY));
   },
   getColorBoundsRect_false : function(mask, color) {
-    var minX=this.width, minY=this.height, maxX=0, maxY=0;
-    var w = this.width; h=this.height;
-    var d = this.data;
-    minYfor: for (var y=0; y<h; y++) {
-      for (var x=0; x<w; x++) {
-        var m = (d[y*w+x] & mask) - color;
+    let minX=this.width, minY=this.height, maxX=0, maxY=0;
+    let w = this.width; h=this.height;
+    let d = this.data;
+    minYfor: for (let y=0; y<h; y++) {
+      for (let x=0; x<w; x++) {
+        let m = (d[y*w+x] & mask) - color;
         if (m) {
           minX = maxX = x;
           minY = maxY = y;
@@ -292,9 +292,9 @@ BitmapData = Klass({
         }
       }
     }
-    maxYfor: for (var y=h-1; y>minY; y--) {
-      for (var x=0; x<w; x++) {
-        var m = (d[y*w+x] & mask) - color;
+    maxYfor: for (let y=h-1; y>minY; y--) {
+      for (let x=0; x<w; x++) {
+        let m = (d[y*w+x] & mask) - color;
         if (m) {
           if (x < minX) minX = x;
           if (x > maxX) maxX = x;
@@ -303,16 +303,16 @@ BitmapData = Klass({
         }
       }
     }
-    for (var y=minY; y<=maxY; y++) {
-      for (var x=0; x<minX; x++) {
-        var m = (d[y*w+x] & mask) - color;
+    for (let y=minY; y<=maxY; y++) {
+      for (let x=0; x<minX; x++) {
+        let m = (d[y*w+x] & mask) - color;
         if (m) {
           minX = x;
           break;
         }
       }
-      for (var x=h-1; x>maxX; x--) {
-        var m = (d[y*w+x] & mask) - color;
+      for (let x=h-1; x>maxX; x--) {
+        let m = (d[y*w+x] & mask) - color;
         if (m) {
           maxX = x;
           break;
@@ -323,15 +323,15 @@ BitmapData = Klass({
   },
   putImageData : function(imageData, x,y, w,h) {
     w = Math.clamp(w,0,imageData.width), h = Math.clamp(h,0,imageData.height);
-    var stride = this.width;
-    var d = this.data;
-    var td = imageData.data;
-    var y = Math.clamp(y,0,this.height)*stride
+    let stride = this.width;
+    let d = this.data;
+    let td = imageData.data;
+    let y = Math.clamp(y,0,this.height)*stride
       , y2 = Math.clamp(y+h,0,this.height)*stride
       , x = Math.clamp(x,0,this.width)
       , x2 = Math.clamp(x+w,0,this.width);
-    for (var y1=y,ty1=0; y1<y2; y1+=stride,ty1+=imageData.width*4) {
-      for (var x1=x,tx1=0; x1<x2; x1++,tx1+=4) {
+    for (let y1=y,ty1=0; y1<y2; y1+=stride,ty1+=imageData.width*4) {
+      for (let x1=x,tx1=0; x1<x2; x1++,tx1+=4) {
         d[y1+x1] = ( // transform canvas pixel to 32-bit ARGB int
           (td[ty1+tx1] << 16) |
           (td[ty1+tx1+1] << 8) |
@@ -345,16 +345,16 @@ BitmapData = Klass({
     this.putImageData(canvas.getContext('2d').getImageData(0,0,w,h),x,y,w,h);
   },
   drawOnCanvas : function(canvas) {
-    var ctx = canvas.getContext('2d');
-    var id = ctx.getImageData(0,0,this.width,this.height);
-    var stride = this.width;
-    var length = this.height*stride;
-    var d = this.data;
-    var td = id.data;
-    for (var y=0; y<length; y+=stride) {
-      for (var x=0; x<stride; x++) {
-        var base = 4*(y+x);
-        var c = d[y+x];
+    let ctx = canvas.getContext('2d');
+    let id = ctx.getImageData(0,0,this.width,this.height);
+    let stride = this.width;
+    let length = this.height*stride;
+    let d = this.data;
+    let td = id.data;
+    for (let y=0; y<length; y+=stride) {
+      for (let x=0; x<stride; x++) {
+        let base = 4*(y+x);
+        let c = d[y+x];
         td[base] = (c >> 16) & 0xff;
         td[++base] = (c >> 8) & 0xff;
         td[++base] = (c) & 0xff;
@@ -364,12 +364,12 @@ BitmapData = Klass({
     ctx.putImageData(id, 0,0);
   },
   floodFill : function(x, y, nv) {
-    var l=0, x1=0, x2=0, dy=0;
-    var ov=0; /* old pixel value */
-    var stack = [];
-    var w = this.width, h = this.height;
-    var stride = this.width;
-    var data = this.data;
+    let l=0, x1=0, x2=0, dy=0;
+    let ov=0; /* old pixel value */
+    let stack = [];
+    let w = this.width, h = this.height;
+    let stride = this.width;
+    let data = this.data;
 
     ov = data[y*stride + x];
     if (ov==nv || x<0 || x>=w || y<0 || y>=h) return;
@@ -378,7 +378,7 @@ BitmapData = Klass({
 
     while (stack.length > 0) {
       /* pop segment off stack and fill a neighboring scan line */
-      var a = stack.pop();
+      let a = stack.pop();
       y = a[0]+a[3], x1 = a[1], x2 = a[2], dy = a[3];
       /*
       * segment of scan line y-dy for x1<=x<=x2 was previously filled,
@@ -511,9 +511,9 @@ NyARMat = Klass(
   initialize : function(i_row,i_clm)
   {
     this.m = new Array(i_row);
-    for (var i=0; i<i_row; i++) {
+    for (let i=0; i<i_row; i++) {
       this.m[i] = new FloatVector(i_clm);
-      for (var j=0; j<i_clm; j++)
+      for (let j=0; j<i_clm; j++)
         this.m[i][j] = 0.0;
     }
     this.__matrixSelfInv_nos=new FloatVector(i_row);
@@ -547,14 +547,14 @@ NyARMat = Klass(
     */
   ,matrixSelfInv : function()
   {
-    var ap = this.m;
-    var dimen = this.row;
-    var dimen_1 = dimen - 1;
-    var ap_n, ap_ip, ap_i;// wap;
-    var j, ip, nwork;
-    var nos = this.__matrixSelfInv_nos;//ワーク変数
+    let ap = this.m;
+    let dimen = this.row;
+    let dimen_1 = dimen - 1;
+    let ap_n, ap_ip, ap_i;// wap;
+    let j, ip, nwork;
+    let nos = this.__matrixSelfInv_nos;//ワーク変数
     // double epsl;
-    var p, pbuf, work;
+    let p, pbuf, work;
 
     /* check size */
     switch (dimen) {
@@ -577,7 +577,7 @@ NyARMat = Klass(
     for (n = 0; n < dimen; n++) {
       ap_n = ap[n];// wcp = ap + n * rowa;
       p = 0.0;
-      for (var i = n; i < dimen; i++) {
+      for (let i = n; i < dimen; i++) {
         if (p < (pbuf = Math.abs(ap[i][0]))) {
           p = pbuf;
           ip = i;
@@ -640,22 +640,22 @@ ArrayUtils = ASKlass('ArrayUtils',
 {
   create2dInt : function(height, width)
   {
-    var r = new Array(height);
-    for (var i = 0; i < height; i++){
+    let r = new Array(height);
+    for (let i = 0; i < height; i++){
       r[i] = new IntVector(width);
     }
     return r;
   }
   ,create2dNumber : function(height, width)
   {
-    var r = new Array(height);
-    for (var i = 0; i < height; i++){
+    let r = new Array(height);
+    for (let i = 0; i < height; i++){
       r[i] = new FloatVector(width);
     }
     return r;
   }
   ,copyInt : function(src, srcPos, dest, destPos, length) {
-    for (var i = 0; i < length; i++) {
+    for (let i = 0; i < length; i++) {
       dest[destPos + i] = src[srcPos + i];
     }
   }
