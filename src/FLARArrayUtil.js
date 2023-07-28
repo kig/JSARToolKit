@@ -29,8 +29,8 @@
  */
 ArrayUtil = ASKlass('ArrayUtil', {
   createJaggedArray : function(len) {
-    var arr = new Array(len);
-    var args = toArray(arguments).slice(1);
+    let arr = new Array(len);
+    let args = toArray(arguments).slice(1);
     while (len--) {
       arr[len] = args.length ? this.createJaggedArray.apply(null, args) : 0;
     }
@@ -43,7 +43,7 @@ ArrayUtil = ASKlass('ArrayUtil', {
     return this.createJaggedArray(depth, height, width);
   }
   ,copy : function(src, srcPos, dest, destPos, length) {
-    for (var i = 0; i < length; i++) {
+    for (let i = 0; i < length; i++) {
       dest[destPos + i] = src[srcPos + i];
     }
   }
