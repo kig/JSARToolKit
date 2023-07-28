@@ -74,18 +74,18 @@ NyARContourPickup = ASKlass('NyARContourPickup',
    */
   ,impl_getContour : function(i_raster,i_th,i_entry_x,i_entry_y,i_array_size,o_coord_x,o_coord_y)
   {
-    var xdir = this._getContour_xdir;// static int xdir[8] = { 0, 1, 1, 1, 0,-1,-1,-1};
-    var ydir = this._getContour_ydir;// static int ydir[8] = {-1,-1, 0, 1, 1, 1, 0,-1};
-    var i_buf=i_raster.getBuffer();
-    var width=i_raster.getWidth();
-    var height=i_raster.getHeight();
+    let xdir = this._getContour_xdir;// static int xdir[8] = { 0, 1, 1, 1, 0,-1,-1,-1};
+    let ydir = this._getContour_ydir;// static int ydir[8] = {-1,-1, 0, 1, 1, 1, 0,-1};
+    let i_buf=i_raster.getBuffer();
+    let width=i_raster.getWidth();
+    let height=i_raster.getHeight();
     //クリップ領域の上端に接しているポイントを得る。
-    var coord_num = 1;
+    let coord_num = 1;
     o_coord_x[0] = i_entry_x;
     o_coord_y[0] = i_entry_y;
-    var dir = 5;
-    var c = i_entry_x;
-    var r = i_entry_y;
+    let dir = 5;
+    let c = i_entry_x;
+    let r = i_entry_y;
     for (;;) {
       dir = (dir + 5) % 8;//dirの正規化
       //ここは頑張ればもっと最適化できると思うよ。
@@ -136,10 +136,10 @@ NyARContourPickup = ASKlass('NyARContourPickup',
         }
       }else{
         //境界に接しているとき
-        var i;
+        let i;
         for (i = 0; i < 8; i++){
-          var x=c + xdir[dir];
-          var y=r + ydir[dir];
+          let x=c + xdir[dir];
+          let y=r + ydir[dir];
           //境界チェック
           if(x>=0 && x<width && y>=0 && y<height){
             if (i_buf[(y)*width+(x)] <= i_th) {
@@ -207,8 +207,8 @@ NyARCoord2Linear = ASKlass('NyARCoord2Linear',
   ,coord2Line : function(i_st,i_ed,i_xcoord,i_ycoord,i_cood_num,o_line)
   {
     //頂点を取得
-    var n,st,ed;
-    var w1;
+    let n,st,ed;
+    let w1;
     //探索区間の決定
     if(i_ed>=i_st){
       //頂点[i]から頂点[i+1]までの輪郭が、1区間にあるとき
@@ -240,8 +240,8 @@ NyARCoord2Linear = ASKlass('NyARCoord2Linear',
       return false;
     }
     //主成分分析する。
-    var evec=this.__getSquareLine_evec;
-    var mean=this.__getSquareLine_mean;
+    let evec=this.__getSquareLine_evec;
+    let mean=this.__getSquareLine_mean;
     this._pca.pca(this._xpos,this._ypos,n,evec, this.__getSquareLine_ev,mean);
     o_line.dy = evec.m01;// line[i][0] = evec->m[1];
     o_line.dx = -evec.m00;// line[i][1] = -evec->m[0];
@@ -281,17 +281,17 @@ NyARVertexCounter = ASKlass('NyARVertexCounter',
   */
   ,get_vertex : function(st,ed,i_coord_len)
   {
-    var i;
-    var d;
+    let i;
+    let d;
     //メモ:座標値は65536を超えなければint32で扱って大丈夫なので変更。
     //dmaxは4乗なのでやるとしてもint64じゃないとマズイ
-    var v1 = 0;
-    var lx_coord = this.x_coord;
-    var ly_coord = this.y_coord;
-    var a = ly_coord[ed] - ly_coord[st];
-    var b = lx_coord[st] - lx_coord[ed];
-    var c = lx_coord[ed] * ly_coord[st] - ly_coord[ed] * lx_coord[st];
-    var dmax = 0;
+    let v1 = 0;
+    let lx_coord = this.x_coord;
+    let ly_coord = this.y_coord;
+    let a = ly_coord[ed] - ly_coord[st];
+    let b = lx_coord[st] - lx_coord[ed];
+    let c = lx_coord[ed] * ly_coord[st] - ly_coord[ed] * lx_coord[st];
+    let dmax = 0;
     if(st<ed){
       //stとedが1区間
       for (i = st + 1; i < ed; i++) {
@@ -355,12 +355,12 @@ NyARCoord2SquareVertexIndexes = ASKlass('NyARCoord2SquareVertexIndexes',
    */
   ,getVertexIndexes : function(i_x_coord ,i_y_coord,i_coord_num, i_area,o_vertex)
   {
-    var wv1 = this.__getSquareVertex_wv1;
-    var wv2 = this.__getSquareVertex_wv2;
-    var vertex1_index=this.getFarPoint(i_x_coord,i_y_coord,i_coord_num,0);
-    var prev_vertex_index=(vertex1_index+i_coord_num)%i_coord_num;
-    var v1=this.getFarPoint(i_x_coord,i_y_coord,i_coord_num,vertex1_index);
-    var thresh = (i_area / 0.75) * 0.01 * this.VERTEX_FACTOR;
+    let wv1 = this.__getSquareVertex_wv1;
+    let wv2 = this.__getSquareVertex_wv2;
+    let vertex1_index=this.getFarPoint(i_x_coord,i_y_coord,i_coord_num,0);
+    let prev_vertex_index=(vertex1_index+i_coord_num)%i_coord_num;
+    let v1=this.getFarPoint(i_x_coord,i_y_coord,i_coord_num,vertex1_index);
+    let thresh = (i_area / 0.75) * 0.01 * this.VERTEX_FACTOR;
     o_vertex[0] = vertex1_index;
     if (!wv1.getVertex(i_x_coord, i_y_coord,i_coord_num, vertex1_index, v1, thresh)) {
       return false;
@@ -368,7 +368,7 @@ NyARCoord2SquareVertexIndexes = ASKlass('NyARCoord2SquareVertexIndexes',
     if (!wv2.getVertex(i_x_coord, i_y_coord,i_coord_num, v1,prev_vertex_index, thresh)) {
       return false;
     }
-    var v2;
+    let v2;
     if (wv1.number_of_vertex == 1 && wv2.number_of_vertex == 1) {
       o_vertex[1] = wv1.vertex[0];
       o_vertex[2] = v1;
@@ -428,12 +428,12 @@ NyARCoord2SquareVertexIndexes = ASKlass('NyARCoord2SquareVertexIndexes',
   ,getFarPoint : function(i_coord_x,i_coord_y,i_coord_num,i_point)
   {
     //
-    var sx = i_coord_x[i_point];
-    var sy = i_coord_y[i_point];
-    var d = 0;
-    var w, x, y;
-    var ret = 0;
-    var i;
+    let sx = i_coord_x[i_point];
+    let sy = i_coord_y[i_point];
+    let d = 0;
+    let w, x, y;
+    let ret = 0;
+    let i;
     for (i = i_point+1; i < i_coord_num; i++) {
       x = i_coord_x[i] - sx;
       y = i_coord_y[i] - sy;
@@ -538,28 +538,28 @@ NyARSquareContourDetector_Rle = ASKlass('NyARSquareContourDetector_Rle', NyARSqu
   __detectMarker_mkvertex : new IntVector(4)
   ,detectMarkerCB : function(i_raster ,i_callback)
   {
-    var flagment=this._stack;
-    var overlap = this._overlap_checker;
+    let flagment=this._stack;
+    let overlap = this._overlap_checker;
     // ラベル数が0ならここまで
-    var label_num=this._labeling.labeling_NyARBinRaster(i_raster, 0, i_raster.getHeight(), flagment);
+    let label_num=this._labeling.labeling_NyARBinRaster(i_raster, 0, i_raster.getHeight(), flagment);
     if (label_num < 1) {
       return;
     }
     //ラベルをソートしておく
     flagment.sortByArea();
     //ラベルリストを取得
-    var labels=(flagment.getArray());
-    var xsize = this._width;
-    var ysize = this._height;
-    var xcoord = this._xcoord;
-    var ycoord = this._ycoord;
-    var coord_max = this._max_coord;
-    var mkvertex =this.__detectMarker_mkvertex;
+    let labels=(flagment.getArray());
+    let xsize = this._width;
+    let ysize = this._height;
+    let xcoord = this._xcoord;
+    let ycoord = this._ycoord;
+    let coord_max = this._max_coord;
+    let mkvertex =this.__detectMarker_mkvertex;
     //重なりチェッカの最大数を設定
     overlap.setMaxLabels(label_num);
-    for (var i=0; i < label_num; i++) {
-      var label_pt=labels[i];
-      var label_area = label_pt.area;
+    for (let i=0; i < label_num; i++) {
+      let label_pt=labels[i];
+      let label_area = label_pt.area;
       // クリップ領域が画面の枠に接していれば除外
       if (label_pt.clip_l == 0 || label_pt.clip_r == xsize-1){
         continue;
@@ -573,7 +573,7 @@ NyARSquareContourDetector_Rle = ASKlass('NyARSquareContourDetector_Rle', NyARSqu
         continue;
       }
       //輪郭を取得
-      var coord_num = _cpickup.getContour_NyARBinRaster(i_raster,label_pt.entry_x,label_pt.clip_t, coord_max, xcoord, ycoord);
+      let coord_num = _cpickup.getContour_NyARBinRaster(i_raster,label_pt.entry_x,label_pt.clip_t, coord_max, xcoord, ycoord);
       if (coord_num == coord_max) {
         // 輪郭が大きすぎる。
         continue;
@@ -599,8 +599,8 @@ NyARSquareStack = ASKlass('NyARSquareStack', NyARObjectStack,
   }
   ,createArray : function(i_length)
   {
-    var ret= new Array(i_length);
-    for (var i =0; i < i_length; i++){
+    let ret= new Array(i_length);
+    for (let i =0; i < i_length; i++){
       ret[i] = new NyARSquare();
     }
     return (ret);
