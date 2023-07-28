@@ -80,7 +80,7 @@ TransformedBitmapPickup = ASKlass('TransformedBitmapPickup', NyARColorPatt_Persp
    */
   ,pickupImage2d : function(i_src_imege,i_l,i_t,i_r,i_b,i_base_mat)
   {
-    var cp00, cp01, cp02, cp11, cp12;
+    let cp00, cp01, cp02, cp11, cp12;
     cp00 = this._ref_perspective.m00;
     cp01 = this._ref_perspective.m01;
     cp02 = this._ref_perspective.m02;
@@ -90,12 +90,12 @@ TransformedBitmapPickup = ASKlass('TransformedBitmapPickup', NyARColorPatt_Persp
     //頂点を計算する。
     //[hX,hY,h]=[P][RT][x,y,z]
     //出力先
-    var poinsts = this._work_points;
-    var yt0,yt1,yt2;
-    var x3, y3, z3;
-    var m00=i_base_mat.m00;
-    var m10=i_base_mat.m10;
-    var m20=i_base_mat.m20;
+    let poinsts = this._work_points;
+    let yt0,yt1,yt2;
+    let x3, y3, z3;
+    let m00=i_base_mat.m00;
+    let m10=i_base_mat.m10;
+    let m20=i_base_mat.m20;
     //yとtの要素を先に計算
     yt0=i_base_mat.m01 * i_t+i_base_mat.m03;
     yt1=i_base_mat.m11 * i_t+i_base_mat.m13;
